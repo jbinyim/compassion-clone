@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import closeBtn from "../img/icon/close.png";
 
 const HBannerBox = styled.div`
   width: 100%;
@@ -23,9 +24,11 @@ const Header = () => {
           <HBannerLeft>
             <p>Pray for Haiti</p>
             <p>아이티 어린이를 위해 기도해 주세요!</p>
-            <button>자세히</button>
+            <button>자세히보기</button>
           </HBannerLeft>
-          <div></div>
+          <div>
+            <img src={closeBtn} alt="closeBtn" />
+          </div>
         </HBanner>
       </HBannerBox>
     </div>
