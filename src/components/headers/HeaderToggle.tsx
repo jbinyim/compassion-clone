@@ -72,9 +72,29 @@ const SubMenu = styled.li`
   }
 `;
 
-const MenuBottomBox = styled.div``;
+const MenuBottomBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
 
-const MenuBottom = styled.p``;
+const MenuBottom = styled.p`
+  font-size: 24px;
+  font-weight: bold;
+  color: ${({ theme }) => theme.colors.nero};
+  position: relative;
+  cursor: pointer;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 7px;
+    right: -25px;
+    display: inline-block;
+    background: url(${linkRight}) center/cover no-repeat;
+    width: 24px;
+    height: 24px;
+  }
+`;
 
 const HeaderToggle = () => {
   const setMenuToggle = useSetRecoilState(headerToggleBtn);
@@ -143,6 +163,10 @@ const HeaderToggle = () => {
         </MenuTopBox>
         <MenuBottomBox>
           <MenuBottom>기업사회공헌</MenuBottom>
+          <MenuBottom>교회협력</MenuBottom>
+          <MenuBottom>컴패션스토어</MenuBottom>
+          <MenuBottom>컴패션메이트</MenuBottom>
+          <MenuBottom>인재채용</MenuBottom>
         </MenuBottomBox>
       </MenuBox>
     </Container>
