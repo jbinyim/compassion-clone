@@ -43,7 +43,8 @@ const mediaSize = {
   m: "screen and (max-width: 500px)",
   l: "screen and (max-width: 768px)",
   xl: "screen and (max-width: 1024px)",
-  xxl: "screen and (max-width: 1440px)",
+  xxl: "screen and (max-width: 1280px)",
+  xxxl: "screen and (max-width: 1440px)",
 };
 
 const theme = {

@@ -10,6 +10,7 @@ const Container = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 11;
   width: 100%;
   height: 100%;
   background: ${({ theme }) => theme.colors.endeavour};
@@ -17,16 +18,25 @@ const Container = styled.div`
 
 const ToggleHead = styled.div`
   max-width: 1200px;
+
   margin: 40px auto 80px;
+  padding: 0 4%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media ${({ theme }) => theme.mediaSize.l} {
+    justify-content: right;
+    margin: 40px auto 0;
+  }
 `;
 
 const LogoImg = styled.img`
   width: 144px;
   height: 56px;
   cursor: pointer;
+  @media ${({ theme }) => theme.mediaSize.l} {
+    display: none;
+  }
 `;
 
 const CloseImg = styled.img`
@@ -41,9 +51,14 @@ const MenuBox = styled.div`
 `;
 
 const MenuTopBox = styled.ul`
-  padding: 39px 0;
   display: flex;
   justify-content: space-between;
+  padding: 39px 4%;
+  @media ${({ theme }) => theme.mediaSize.l} {
+    flex-direction: column;
+    gap: 64px;
+    padding: 44px 10%;
+  }
 `;
 
 const MenuTop = styled.li``;
@@ -55,6 +70,9 @@ const MainMenu = styled.p`
   margin-bottom: 48px;
   padding-bottom: 8px;
   border-bottom: 1px solid ${({ theme }) => theme.colors.nero};
+  @media ${({ theme }) => theme.mediaSize.xl} {
+    font-size: 20px;
+  }
 `;
 
 const SubMenuBox = styled.ul`
@@ -70,12 +88,22 @@ const SubMenu = styled.li`
   &:hover {
     color: rgba(255, 255, 255, 0.5);
   }
+  @media ${({ theme }) => theme.mediaSize.xl} {
+    font-size: 16px;
+  }
 `;
 
 const MenuBottomBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 4%;
+  @media ${({ theme }) => theme.mediaSize.l} {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 0 10%;
+  }
 `;
 
 const MenuBottom = styled.p`
@@ -93,6 +121,9 @@ const MenuBottom = styled.p`
     background: url(${linkRight}) center/cover no-repeat;
     width: 24px;
     height: 24px;
+  }
+  @media ${({ theme }) => theme.mediaSize.xl} {
+    font-size: 18px;
   }
 `;
 
