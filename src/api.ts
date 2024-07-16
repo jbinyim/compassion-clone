@@ -1,0 +1,17 @@
+const BASE_PATH =
+  "https://my-json-server.typicode.com/jbinyim/mydb-json/goolee";
+export interface ChildI {
+  id: number;
+  number: string;
+  name: string;
+  live: string;
+  age: number;
+  birth: string;
+  hoby: string[];
+  family: string[];
+  img: string;
+}
+
+export const getBabyInfo = async () => {
+  return fetch(`${BASE_PATH}`).then((response) => response.json());
+};

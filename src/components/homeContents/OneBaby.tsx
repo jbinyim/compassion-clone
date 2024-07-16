@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { useQuery } from "@tanstack/react-query";
+import { ChildI, getBabyInfo } from "../../api";
 
 const OneBabyContainer = styled.div`
   position: relative;
@@ -12,6 +14,17 @@ const Inner = styled.div`
 `;
 
 const OneBaby = () => {
+  const { data, isLoading } = useQuery<ChildI[]>({
+    queryKey: ["babyInfo"],
+    queryFn: getBabyInfo,
+  });
+
+  if (isLoading) {
+    console.log("loading");
+  } else {
+    console.log(data);
+  }
+
   return (
     <OneBabyContainer>
       <Inner>
