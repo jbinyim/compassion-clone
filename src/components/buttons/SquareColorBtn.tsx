@@ -37,6 +37,13 @@ const Btn = styled.button`
       width: 210px;
     }
   }
+  &.specialGive {
+    width: 167px;
+    height: 48px;
+    &:hover {
+      background: rgb(0, 67, 129);
+    }
+  }
 `;
 
 interface SColorI {

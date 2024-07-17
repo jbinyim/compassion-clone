@@ -76,6 +76,8 @@ const HeadingBox = styled.div<{ $yScroll: number }>`
   width: 100%;
   transition: all 0.3s;
   background: ${(props) => (props.$yScroll > 57 ? "#fff" : "transparent")};
+  border: 1px solid
+    ${(props) => (props.$yScroll > 57 ? "#e0e0e0" : "transparent")};
   color: ${(props) => (props.$yScroll > 57 ? "#000" : "#fff")};
   &:hover {
     background: #fff;

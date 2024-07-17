@@ -42,6 +42,14 @@ const Btn = styled.button`
       width: 210px;
     }
   }
+  &.specialSee {
+    width: 144px;
+    height: 48px;
+    padding: 0 10px;
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
 `;
 
 interface squareBtnI {

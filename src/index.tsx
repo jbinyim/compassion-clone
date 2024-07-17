@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Noto Sans KR", sans-serif;
     line-height: 1.5;
     box-sizing: border-box;
+    overflow-x: hidden;
   }
 `;
 

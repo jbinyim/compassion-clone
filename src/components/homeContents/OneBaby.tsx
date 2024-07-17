@@ -60,7 +60,6 @@ const InfoBox = styled.div`
   margin-top: 60px;
   z-index: 1;
 `;
-
 const Title = styled.h3`
   font-size: 24px;
   font-weight: bold;
@@ -76,7 +75,7 @@ const Title = styled.h3`
     height: 1px;
     background: ${({ theme }) => theme.colors.endeavour};
     position: absolute;
-    left: -162px;
+    left: -222px;
     bottom: 0;
   }
   @media ${({ theme }) => theme.mediaSize.xl} {
