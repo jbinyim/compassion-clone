@@ -50,6 +50,26 @@ const Btn = styled.button`
       background: rgba(255, 255, 255, 0.2);
     }
   }
+  &.storySee {
+    width: 180px;
+    height: 48px;
+    margin-left: 40px;
+    margin-bottom: 15px;
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+  &.storySee02 {
+    width: 180px;
+    height: 48px;
+    margin-left: 40px;
+    color: #000;
+    border: 1px solid #000;
+    margin-bottom: 15px;
+    &:hover {
+      background: rgba(255, 255, 255, 1);
+    }
+  }
 `;
 
 interface squareBtnI {

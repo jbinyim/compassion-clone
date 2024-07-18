@@ -7,6 +7,8 @@ import Support from "../components/homeContents/Support";
 import SupportPlus from "../components/homeContents/SupportPlus";
 import Special from "../components/homeContents/Special";
 import Nurture from "../components/homeContents/Nurture";
+import Story from "../components/homeContents/Story";
+import QuickLink from "../components/homeContents/QuickLink";
 
 const Container = styled.div`
   width: 100%;
@@ -35,6 +37,8 @@ const Home = () => {
       </MainContents>
       <Special />
       <Nurture />
+      <Story />
+      <QuickLink />
     </Container>
   );
 };

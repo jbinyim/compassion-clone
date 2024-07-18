@@ -177,7 +177,8 @@ const OneBaby = () => {
               <b>{data[suffle].name}</b>
               입니다.
               <br />
-              저는 <b>{data[suffle].age}</b>살 <b>성별</b>어린이에요.
+              저는 <b>{data[suffle].age}</b>살 <b>{data[suffle].sex}</b>
+              어린이에요.
               <br />
               <br />
               얼른 후원자님을 만나 편지를 주고받고 싶어요.

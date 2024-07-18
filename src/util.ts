@@ -28,6 +28,9 @@ import resNurtureBanner04 from "./img/home/nanture/resNature04.png";
 import yellowImges01 from "./img/icon/yjesus.png";
 import yellowImges02 from "./img/icon/yhand.png";
 import yellowImges03 from "./img/icon/ychurch.png";
+import quickImg01 from "./img/icon/icn_business.png";
+import quickImg02 from "./img/icon/icn_church.png";
+import quickImg03 from "./img/icon/icn_main_store.png";
 
 export const bannerImgArr = [banner01, banner02, banner03, banner04, banner05];
 
@@ -100,17 +103,41 @@ export const nurtureBannerArr = [
 export const yellowListArr = [
   {
     img: yellowImges01,
-    title: "we love jesus",
+    title: "jesus",
     text: "꺼져가는 어린 생명을 살리고 가난으로부터 자유롭게 하는 기적과 같은 일은 `어린 아이들을 용납하고 내게 오는 것을 금하지 말라(마테복음 19:14)`라고 말씀하신 하나님의 사랑으로부터 시작됩니다. ",
   },
   {
     img: yellowImges02,
-    title: "we love children",
+    title: "children",
     text: "전 세계적으로 3억 8,500만 어린이가 극심한 가난으로 소외와 단절, 노동과 사망의 고통에 처해 있습니다. 어린이의 기본적 필요뿐만 아니라 정서와 영적 필요까지 채우고자 하는 컴패션 양육은 후원자의 사랑으로 가능합니다.",
   },
   {
     img: yellowImges03,
-    title: "we love the church",
+    title: "the church",
     text: "컴패션과 함께하는 현지교회는 어린이에 대해 가장 잘 알며 가장 안전한 공동체입니다. 교회의 인적, 금전적, 공간적 헌신은 컴패션 양육 프로그램이 효율적이고 체계적으로 운영되는 기반입니다.",
+  },
+];
+
+export const quickArr = [
+  {
+    img: quickImg01,
+    title: "기업사회공헌",
+    text: "좋은 기업에서 위대한 기업으로",
+    text02: "컴패션과 함께하는 지속가능한 사회 공헌 캠페인",
+    colors: "#0086bf",
+  },
+  {
+    img: quickImg02,
+    title: "교회협력",
+    text: "하나님의 사랑으로",
+    text02: "교회와 교회가 연합하는 통로",
+    colors: "#005eb8",
+  },
+  {
+    img: quickImg03,
+    title: "스토어",
+    text: "하나를 사더라도 가치있게",
+    text02: "구매를 통한 착한 소비",
+    colors: "#003f77",
   },
 ];

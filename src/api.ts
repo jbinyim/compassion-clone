@@ -7,6 +7,7 @@ export interface ChildI {
   name: string;
   live: string;
   age: number;
+  sex: string;
   birth: string;
   hoby: string[];
   family: string[];
