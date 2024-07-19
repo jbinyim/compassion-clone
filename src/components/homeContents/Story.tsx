@@ -85,6 +85,9 @@ const Section01 = styled.div`
   @media ${({ theme }) => theme.mediaSize.l} {
     margin-bottom: 400px;
   }
+  @media ${({ theme }) => theme.mediaSize.m} {
+    margin-bottom: 500px;
+  }
 `;
 
 const Story01Img = styled.img`
@@ -120,6 +123,9 @@ const TextBox01 = styled.div`
     left: 0;
     max-width: 680px;
     width: 92%;
+  }
+  @media ${({ theme }) => theme.mediaSize.m} {
+    top: 200px;
   }
 `;
 

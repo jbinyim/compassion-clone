@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { headerToggleBtn, headerMHover } from "../../atoms";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import HeaderToggle from "./HeaderToggle";
 import SquareBtn from "../buttons/SquareBtn";
@@ -168,6 +169,7 @@ const Header = () => {
   const [menuToggle, setMenuToggle] = useRecoilState(headerToggleBtn);
   const [mouseHover, setMouseHover] = useRecoilState(headerMHover);
   const [yScroll, setYScroll] = useState(0);
+  const navigate = useNavigate();
 
   const closeBanner = () => {
     setCloaseX(false);
@@ -180,6 +182,10 @@ const Header = () => {
   const menuHover = (id: number) => {
     setMenuId(id);
     setMouseHover(true);
+  };
+
+  const pageRoute = (name: string) => {
+    navigate(`/${name}`);
   };
 
   useEffect(() => {
@@ -207,10 +213,19 @@ const Header = () => {
           onMouseLeave={() => setMouseHover(false)}
         >
           <Heading>
-            <LogoImg className="logo" $yScroll={yScroll} />
+            <LogoImg
+              className="logo"
+              $yScroll={yScroll}
+              onClick={() => pageRoute("")}
+            />
             <HeadingRight>
               <MenuBox>
-                <Menu onMouseOver={() => menuHover(0)}>소개</Menu>
+                <Menu
+                  onMouseOver={() => menuHover(0)}
+                  onClick={() => pageRoute("story")}
+                >
+                  소개
+                </Menu>
                 <Menu onMouseOver={() => menuHover(1)}>어린이후원</Menu>
                 <Menu onMouseOver={() => menuHover(2)}>맞춤후원</Menu>
                 <Menu onMouseOver={() => menuHover(3)}>참여</Menu>

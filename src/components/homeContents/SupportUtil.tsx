@@ -12,6 +12,10 @@ const Container = styled.div`
   @media ${({ theme }) => theme.mediaSize.l} {
     width: 32%;
   }
+  @media ${({ theme }) => theme.mediaSize.m} {
+    height: auto;
+    padding-bottom: 15px;
+  }
 `;
 
 const Img = styled.img`
@@ -24,6 +28,14 @@ const Text = styled.p`
   font-weight: lighter;
   text-align: center;
   margin-top: 15px;
+  @media ${({ theme }) => theme.mediaSize.m} {
+    &:last-child {
+      display: none;
+    }
+  }
+  @media ${({ theme }) => theme.mediaSize.s} {
+    display: none;
+  }
 `;
 
 interface SupportYtilI {

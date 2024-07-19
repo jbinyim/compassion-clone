@@ -50,6 +50,10 @@ const TopTitle = styled.h2`
   @media ${({ theme }) => theme.mediaSize.m} {
     font-size: 24px;
   }
+  @media ${({ theme }) => theme.mediaSize.s} {
+    font-size: 18px;
+    letter-spacing: -1px;
+  }
 `;
 
 const TopText = styled.p`

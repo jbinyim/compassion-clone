@@ -28,6 +28,13 @@ const Btn = styled.button`
       border: 1px solid #000;
       color: #000;
     }
+    @media ${({ theme }) => theme.mediaSize.m} {
+      letter-spacing: -1px;
+    }
+    @media ${({ theme }) => theme.mediaSize.s} {
+      font-size: 13px;
+      letter-spacing: -1px;
+    }
   }
   &.report2023 {
     width: 204px;
@@ -69,6 +76,15 @@ const Btn = styled.button`
     &:hover {
       background: rgba(255, 255, 255, 1);
     }
+  }
+  &.download {
+    position: absolute;
+    z-index: 1;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 112px;
+    height: 36px;
   }
 `;
 

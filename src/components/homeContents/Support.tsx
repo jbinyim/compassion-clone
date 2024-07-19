@@ -91,6 +91,9 @@ const Description = styled.p`
 const BtnBox = styled.div`
   display: flex;
   gap: 24px;
+  @media ${({ theme }) => theme.mediaSize.m} {
+    flex-direction: column;
+  }
 `;
 
 const Support = () => {

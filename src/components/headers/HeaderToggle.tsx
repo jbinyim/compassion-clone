@@ -7,18 +7,24 @@ import { useSetRecoilState } from "recoil";
 import { headerToggleBtn } from "../../atoms";
 
 const Container = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 11;
   width: 100%;
   height: 100%;
   background: ${({ theme }) => theme.colors.endeavour};
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
 `;
 
 const ToggleHead = styled.div`
   max-width: 1200px;
-
   margin: 40px auto 80px;
   padding: 0 4%;
   display: flex;

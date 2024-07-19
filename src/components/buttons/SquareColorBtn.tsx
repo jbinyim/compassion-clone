@@ -24,6 +24,10 @@ const Btn = styled.button`
     &:hover {
       background: rgb(0, 67, 129);
     }
+    @media ${({ theme }) => theme.mediaSize.s} {
+      font-size: 13px;
+      letter-spacing: -1px;
+    }
   }
   &.seemoreGraph {
     width: 180px;

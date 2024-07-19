@@ -31,6 +31,37 @@ import yellowImges03 from "./img/icon/ychurch.png";
 import quickImg01 from "./img/icon/icn_business.png";
 import quickImg02 from "./img/icon/icn_church.png";
 import quickImg03 from "./img/icon/icn_main_store.png";
+import youtub from "./img/icon/10052.png";
+import insta from "./img/icon/insta.png";
+import facebook from "./img/icon/facebook.png";
+import blog from "./img/icon/blog.png";
+import kako from "./img/icon/kako.png";
+import naver from "./img/icon/naver.png";
+import bean from "./img/icon/10058.png";
+import seri01 from "./img/storypage/seise/seri01.png";
+import seri02 from "./img/storypage/seise/seri02.png";
+import seri03 from "./img/storypage/seise/seri03.png";
+import seri04 from "./img/storypage/seise/seri04.png";
+import q01 from "./img/storypage/question/q01.png";
+import q02 from "./img/storypage/question/q02.png";
+import q03 from "./img/storypage/question/q03.png";
+import q04 from "./img/storypage/question/q04.png";
+import q05 from "./img/storypage/question/q05.png";
+import q06 from "./img/storypage/question/q06.png";
+import q07 from "./img/storypage/question/q07.png";
+import q08 from "./img/storypage/question/q08.png";
+import q09 from "./img/storypage/question/q09.png";
+import q10 from "./img/storypage/question/q10.png";
+import hover01 from "./img/storypage/question/hover01.png";
+import hover02 from "./img/storypage/question/hover02.png";
+import hover03 from "./img/storypage/question/hover03.png";
+import hover04 from "./img/storypage/question/hover04.png";
+import hover05 from "./img/storypage/question/hover05.png";
+import hover06 from "./img/storypage/question/hover06.png";
+import hover07 from "./img/storypage/question/hover07.png";
+import hover08 from "./img/storypage/question/hover08.png";
+import hover09 from "./img/storypage/question/hover09.png";
+import hover10 from "./img/storypage/question/hover10.png";
 
 export const bannerImgArr = [banner01, banner02, banner03, banner04, banner05];
 
@@ -139,5 +170,99 @@ export const quickArr = [
     text: "하나를 사더라도 가치있게",
     text02: "구매를 통한 착한 소비",
     colors: "#003f77",
+  },
+];
+
+export const IconArr = [youtub, insta, facebook, blog, kako, naver, bean];
+
+export const seriArr = [
+  {
+    img: seri01,
+    name: "가난",
+  },
+  {
+    img: seri02,
+    name: "교회",
+  },
+  {
+    img: seri03,
+    name: "어린이",
+  },
+  {
+    img: seri04,
+    name: "파트너십",
+  },
+];
+
+export const questionArr = [
+  {
+    id: "01",
+    text: "더 나은 세상을",
+    text02: "꿈꾸고있다면?",
+    img: q01,
+    resImg: hover01,
+  },
+  {
+    id: "02",
+    text: "2달러로 하루를",
+    text02: "살아갈 수 있을까?",
+    img: q02,
+    resImg: hover02,
+  },
+  {
+    id: "03",
+    text: "가난은 꿈도",
+    text02: "가난하게 만들까?",
+    img: q03,
+    resImg: hover03,
+  },
+  {
+    id: "04",
+    text: "절망 대신 소망을",
+    text02: "바라보게 하려면?",
+    img: q04,
+    resImg: hover04,
+  },
+  {
+    id: "05",
+    text: "어린이 곁의 가난을",
+    text02: "완전히 뿌리뽑으려면?",
+    img: q05,
+    resImg: hover05,
+  },
+  {
+    id: "06",
+    text: "가난 속 어린이를",
+    text02: "자립하는 어른으로 양육하려면?",
+    img: q06,
+    resImg: hover06,
+  },
+  {
+    id: "07",
+    text: "전인적 양육 실제로",
+    text02: "효과가 있을까?",
+    img: q07,
+    resImg: hover07,
+  },
+  {
+    id: "08",
+    text: "후원금, 믿고 맡길 수 있을까?",
+    text02: "",
+    img: q08,
+    resImg: hover08,
+  },
+  {
+    id: "09",
+    text: "왜 해외 어린이를 도울까?",
+    text02: "",
+    img: q09,
+    resImg: hover09,
+  },
+  {
+    id: "10",
+    text: "컴패션의 후원자는",
+    text02: "정말 함께 자랄까?",
+    img: q10,
+    resImg: hover10,
   },
 ];
