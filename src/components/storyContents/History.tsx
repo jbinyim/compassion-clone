@@ -38,8 +38,28 @@ const HistoryDescBox = styled.div`
 const BottomImgBox = styled.div<{ $bgIMg: string }>`
   width: 100%;
   height: 225px;
-  background: url(${(props) => props.$bgIMg}) center/cover no-repeat;
+  background: url(${(props) => props.$bgIMg}) center no-repeat;
   margin: 350px 0 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+`;
+
+const BottomImgTitle = styled.h4`
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: -1px;
+`;
+
+const GiveBtn = styled.p`
+  width: 104px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  padding-bottom: 5px;
 `;
 
 const historyDate = ["1950", "1960", "1970", "1990", "2000", "2010", "2020"];
@@ -55,7 +75,14 @@ const History = () => {
           ))}
         </DateBox>
         <HistoryDescBox></HistoryDescBox>
-        <BottomImgBox $bgIMg={bottomImg}></BottomImgBox>
+        <BottomImgBox $bgIMg={bottomImg}>
+          <BottomImgTitle>
+            어린이가 자라고 후원자도 자라는
+            <br />
+            우리는 컴패션입니다
+          </BottomImgTitle>
+          <GiveBtn>후원하기</GiveBtn>
+        </BottomImgBox>
       </Inner>
     </Container>
   );
