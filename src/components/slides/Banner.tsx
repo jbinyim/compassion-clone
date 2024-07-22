@@ -54,6 +54,7 @@ const Text = styled.p`
   font-size: 20px;
   font-weight: lighter;
   line-height: 28px;
+  text-align: center;
   @media ${({ theme }) => theme.mediaSize.xl} {
     font-size: 16px;
   }
@@ -66,7 +67,7 @@ interface BannerI {
   image: string;
   resImg: string;
   title: string;
-  text: string;
+  text: React.ReactNode;
 }
 
 const Banner = ({ image, resImg, title, text }: BannerI) => {

@@ -266,3 +266,70 @@ export const questionArr = [
     resImg: hover10,
   },
 ];
+
+export const historyData = [
+  {
+    title:
+      "https://www.compassion.or.kr/resources/fo/compassion/assets/images/sub/1960.png",
+    subTitle: "따듯한 겨울나기, 웜(WARM) 프로젝트",
+    text: "컴패션은 1960년대부터 매년 가을 웜(WARM, Winter Aid Relief Money) 프로젝트의 일환으로 추운 날씨에 동상을 걸리는 한국의 어린이에게 따듯한 스웨터와 운동화를 전달했습니다.",
+    img: "https://www.compassion.or.kr/resources/fo/compassion/assets/images/sub/img_history_1960.png",
+  },
+  {
+    title:
+      "https://www.compassion.or.kr/resources/fo/compassion/assets/images/sub/1974.png",
+    subTitle: "한국 리더십 양성",
+    text: "학교 성적이 우수하고 리더십 있는 중,고,대학생들을 시설장의 추천을 받아 선발하고 장학음을 지원하였습니다. 미래에 한국 사회를 이끌 리더들로 양성하였습니다.",
+    img: "https://www.compassion.or.kr/resources/fo/compassion/assets/images/sub/img_history_1974.png",
+  },
+  {
+    title:
+      "https://www.compassion.or.kr/resources/fo/compassion/assets/images/sub/1993.png",
+    subTitle: "수혜국 한국의 졸업",
+    text: "컴패션은 88올림픽을 성공적으로 치르는 등 한국의 경제성장을 축하하며 한국을 졸업하기로 하였습니다. 이로써 컴패션은 1952년 10월 창설된 이래 1993년 3월까지 41년동안, 10만 명 이상의 한국 어린이를 1:1로 자립 가능한 성인으로 양육하였으며 연평균 83며개 시설에서 8,839명의 어린이를 위하여 40,529,268달러의 후원금을 지원하였습니다.",
+    img: "https://www.compassion.or.kr/resources/fo/compassion/assets/images/sub/img_history_1993.png",
+  },
+  {
+    title:
+      "https://www.compassion.or.kr/resources/fo/compassion/assets/images/sub/2003.png",
+    subTitle: "돕는 나라로 선 첫 사례, 한국",
+    text: "한국컴패션이 컴패션의 10번쨰 후원국으로 재탄생하였습니다. 이로써 한국은 컴패션 안에서 수혜국에서 후원국이 된 첫 사례가 되었습니다. 이는 한국에서 컴패션의 후원으로 영향력 있는 성인이 된 컴패션 졸업생들이 이제 받은 사랑을 전하고 싶다며 국제컴패션의 문을 두드린 결과였습니다.",
+    img: "https://www.compassion.or.kr/resources/fo/compassion/assets/images/sub/img_history_2003.png",
+  },
+  {
+    title:
+      "https://www.compassion.or.kr/resources/fo/compassion/assets/images/sub/2013.png",
+    subTitle: "소망의 땅, 북한",
+    text: "한국컴패션은 2013년, 교회와 함께 북한에서 꿈을 잃은 어린이들에게 전인적인 양육을 제공하는 것이 허용되는 때를 준비하는, 컴패션 북한사역을 시작했습니다. 교회와 협력하여 북한 어린이를 위한 전인적 양육 프로그램과 운영시스템, 전문역량을 개발하고 기도로 마음을 모으기로 했습니다. 이로써, 하나님께서 북한 어린이를 허락하실 그때 성경적 가치관을 가진 샬롬세대를 세울 수 있기를 기대합니다.",
+    img: "https://www.compassion.or.kr/resources/fo/compassion/assets/images/sub/img_history_2015.png",
+  },
+  {
+    title:
+      "https://www.compassion.or.kr/resources/fo/compassion/assets/images/sub/2020.png",
+    subTitle: "230만 명 이상 어린이 양육",
+    text: `컴패션은 전 세계 도움이 필요한 어린이를 자립 가능한 성인이 될 때까지 양육하며, 29개국 230만 명 이상의 어린이들과 함께하고 있습니다.`,
+    img: "https://www.compassion.or.kr/resources/fo/compassion/assets/images/sub/img_history_2020.png",
+  },
+];
+
+export const ctry = [
+  { id: "rwanda", name: "르완다" },
+  { id: "uganda", name: "우간다" },
+  { id: "ethiopia", name: "에티오피아" },
+  { id: "ghana", name: "가나" },
+  { id: "kenya", name: "케냐" },
+  { id: "bolivia", name: "볼리비아" },
+  { id: "philippines", name: "필리핀" },
+  { id: "honduras", name: "온두라스" },
+  { id: "nicaragua", name: "니카라과" },
+  { id: "guatemala", name: "과테말라" },
+  { id: "elsalvador", name: "엘살바도르" },
+  { id: "haiti", name: "아이티" },
+  { id: "bangladesh", name: "방글라데시" },
+  { id: "zimbabwe", name: "짐바브웨" },
+  { id: "tanzania", name: "탄자니아" },
+  { id: "mexico", name: "멕시코" },
+  { id: "laos", name: "라오스" },
+  { id: "cambodia", name: "캄보디아" },
+  { id: "emilio", name: "에밀리오" },
+];

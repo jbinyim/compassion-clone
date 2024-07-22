@@ -91,6 +91,12 @@ const SeriseImgBox = styled.ul`
 const Serises = styled.li`
   text-align: center;
   position: relative;
+  &:hover {
+    .download {
+      background: ${({ theme }) => theme.colors.endeavour};
+      color: #fff;
+    }
+  }
 `;
 
 const Img = styled.img`

@@ -1,5 +1,3 @@
-import { css } from "styled-components";
-
 const colors = {
   nero: "#fff",
   capeCod: "#3d3e3f",

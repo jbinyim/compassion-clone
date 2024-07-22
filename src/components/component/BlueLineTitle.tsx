@@ -20,9 +20,11 @@ const Title = styled.h2`
   }
   @media ${({ theme }) => theme.mediaSize.l} {
     font-size: 20px;
+    font-weight: bold;
   }
   @media ${({ theme }) => theme.mediaSize.m} {
     font-size: 16px;
+    font-weight: bold;
   }
 `;
 

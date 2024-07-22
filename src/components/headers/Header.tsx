@@ -226,7 +226,12 @@ const Header = () => {
                 >
                   소개
                 </Menu>
-                <Menu onMouseOver={() => menuHover(1)}>어린이후원</Menu>
+                <Menu
+                  onMouseOver={() => menuHover(1)}
+                  onClick={() => pageRoute("children")}
+                >
+                  어린이후원
+                </Menu>
                 <Menu onMouseOver={() => menuHover(2)}>맞춤후원</Menu>
                 <Menu onMouseOver={() => menuHover(3)}>참여</Menu>
                 <Menu onMouseOver={() => menuHover(4)}>소식</Menu>
