@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { useQuery } from "@tanstack/react-query";
+import { ChildI, getBabyInfo } from "../../api";
 
 const Container = styled.div`
   margin-top: 80px;
@@ -39,6 +41,40 @@ const List = styled.div`
 `;
 
 const ChildrenList = () => {
+  const [displayedItems, setDisplayedItems] = useState<ChildI[]>([]); // 이미 출력된 아이템을 저장하는 상태
+  const [itemsToShow, setItemsToShow] = useState(6); // 현재 보여줄 아이템 수
+  const { data, isLoading } = useQuery<ChildI[]>({
+    queryKey: ["babyList"],
+    queryFn: getBabyInfo,
+  });
+
+  if (isLoading) return <div>Loading...</div>;
+  if (!data || data.length === 0) return <div>No data available</div>;
+
+  const shuffledData = [...data].sort(() => 0.5 - Math.random());
+
+  const getNewItems = () => {
+    // 아직 출력되지 않은 아이템 필터링
+    const remainingItems = shuffledData.filter(
+      (item) => !displayedItems.includes(item)
+    );
+
+    // 남은 아이템이 없으면 더 이상 추가할 수 없음
+    if (remainingItems.length === 0) {
+      alert("모든 아이템을 다 출력했습니다!"); // 모든 아이템이 출력되었음을 알림
+      return;
+    }
+
+    // 새로운 아이템을 선택
+    const newItems = remainingItems.slice(0, itemsToShow);
+    setDisplayedItems((prev) => [...prev, ...newItems]); // 새로운 아이템을 기존 아이템 목록에 추가
+    setItemsToShow(itemsToShow + 6); // 보여줄 아이템 수를 6개 늘림
+  };
+
+  if (displayedItems.length === 0) {
+    getNewItems();
+  }
+
   return (
     <Container>
       <Inner>
@@ -54,7 +90,16 @@ const ChildrenList = () => {
             </ToggleIcon>
           </ListToggle>
         </ListToggleBox>
-        <List></List>
+        <List>
+          <ul>
+            {displayedItems.map((item, index) => (
+              <li key={index}>{item.name}</li> // 배열의 각 요소에 맞게 수정하세요.
+            ))}
+          </ul>
+          {displayedItems.length < data.length && ( // 모든 아이템이 출력되지 않았을 경우에만 "더보기" 버튼 표시
+            <button onClick={getNewItems}>더보기</button>
+          )}
+        </List>
       </Inner>
     </Container>
   );
