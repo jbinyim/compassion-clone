@@ -48,6 +48,12 @@ const Btn = styled.button`
       background: rgb(0, 67, 129);
     }
   }
+  &.childNow {
+    width: 100%;
+    &:hover {
+      background: rgb(0, 67, 129);
+    }
+  }
 `;
 
 interface SColorI {

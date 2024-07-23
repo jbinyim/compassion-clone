@@ -1,103 +1,216 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { useMediaQuery } from "react-responsive";
+import SquareBtn from "../buttons/SquareBtn";
+import SquareColorBtn from "../buttons/SquareColorBtn";
 import { ChildI, getBabyInfo } from "../../api";
-
-const Container = styled.div`
-  margin-top: 80px;
-`;
-
-const Inner = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  @media ${({ theme }) => theme.mediaSize.xxl} {
-    padding: 0 4%;
-  }
-`;
-
-const ListToggleBox = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: right;
-  gap: 8px;
-`;
-
-const ListToggle = styled.button`
-  width: 72px;
-  height: 48px;
-  border: 1px solid ${({ theme }) => theme.colors.endeavour};
-  border-radius: 3px;
-  background: #fff;
-  cursor: pointer;
-`;
-
-const ToggleIcon = styled.svg`
-  width: 24px;
-  height: 24px;
-  fill: ${({ theme }) => theme.colors.endeavour};
-`;
-const List = styled.div`
-  margin-top: 24px;
-`;
+import share from "../../img/childrenpage/ico_sns_share.png";
+import loadingImg from "../../img/icon/loading.gif";
+import {
+  Container,
+  Inner,
+  ListToggleBox,
+  ListToggle,
+  ToggleIcon,
+  List,
+  ListCardBox,
+  ListCard,
+  TextBox,
+  Title,
+  Text,
+  TextBold,
+  Text02,
+  Img,
+  BtnBox,
+  ShareBtn,
+  BtnBottomBox,
+  CartBtn,
+  SeeMoreBtn,
+  ListCardFalse,
+  ShareBtnBox,
+  ShareToggleBox,
+  ShareToggle,
+  FalseImg,
+} from "./ChildrenListStyled";
 
 const ChildrenList = () => {
-  const [displayedItems, setDisplayedItems] = useState<ChildI[]>([]); // 이미 출력된 아이템을 저장하는 상태
-  const [itemsToShow, setItemsToShow] = useState(6); // 현재 보여줄 아이템 수
+  const [listToggle, setListToggle] = useState(true);
+  const [displayedItems, setDisplayedItems] = useState<ChildI[]>([]);
+  const [itemsToShow, setItemsToShow] = useState(6);
+  const [shareToggle, setShareToggle] = useState(false);
+
+  const xl = useMediaQuery({ maxWidth: 1024 });
+
+  useEffect(() => {
+    if (xl) {
+      setListToggle(false);
+    } else {
+      setListToggle(true);
+    }
+  }, [xl]);
+
+  const onClickListToggle = (toggle: boolean) => {
+    setListToggle(toggle);
+  };
+
   const { data, isLoading } = useQuery<ChildI[]>({
     queryKey: ["babyList"],
     queryFn: getBabyInfo,
   });
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <img src={loadingImg} alt="loading.gif" />;
   if (!data || data.length === 0) return <div>No data available</div>;
 
   const shuffledData = [...data].sort(() => 0.5 - Math.random());
 
   const getNewItems = () => {
-    // 아직 출력되지 않은 아이템 필터링
     const remainingItems = shuffledData.filter(
       (item) => !displayedItems.includes(item)
     );
 
-    // 남은 아이템이 없으면 더 이상 추가할 수 없음
     if (remainingItems.length === 0) {
-      alert("모든 아이템을 다 출력했습니다!"); // 모든 아이템이 출력되었음을 알림
+      alert("모든 아이템을 다 출력했습니다!");
       return;
     }
 
-    // 새로운 아이템을 선택
     const newItems = remainingItems.slice(0, itemsToShow);
-    setDisplayedItems((prev) => [...prev, ...newItems]); // 새로운 아이템을 기존 아이템 목록에 추가
-    setItemsToShow(itemsToShow + 6); // 보여줄 아이템 수를 6개 늘림
+    setDisplayedItems((prev) => [...prev, ...newItems]);
+    setItemsToShow(itemsToShow + 6);
   };
 
   if (displayedItems.length === 0) {
     getNewItems();
   }
 
+  console.log(listToggle);
   return (
     <Container>
       <Inner>
         <ListToggleBox>
-          <ListToggle>
+          <ListToggle
+            onClick={() => onClickListToggle(true)}
+            $listToggle={listToggle}
+            className="rowBox"
+          >
             <ToggleIcon viewBox="0 -960 960 960">
               <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
             </ToggleIcon>
           </ListToggle>
-          <ListToggle>
+          <ListToggle
+            onClick={() => onClickListToggle(false)}
+            $listToggle={listToggle}
+            className="columnBox"
+          >
             <ToggleIcon viewBox="0 -960 960 960">
               <path d="M340-540H200q-33 0-56.5-23.5T120-620v-140q0-33 23.5-56.5T200-840h140q33 0 56.5 23.5T420-760v140q0 33-23.5 56.5T340-540Zm-140-80h140v-140H200v140Zm140 500H200q-33 0-56.5-23.5T120-200v-140q0-33 23.5-56.5T200-420h140q33 0 56.5 23.5T420-340v140q0 33-23.5 56.5T340-120Zm-140-80h140v-140H200v140Zm560-340H620q-33 0-56.5-23.5T540-620v-140q0-33 23.5-56.5T620-840h140q33 0 56.5 23.5T840-760v140q0 33-23.5 56.5T760-540Zm-140-80h140v-140H620v140Zm140 500H620q-33 0-56.5-23.5T540-200v-140q0-33 23.5-56.5T620-420h140q33 0 56.5 23.5T840-340v140q0 33-23.5 56.5T760-120Zm-140-80h140v-140H620v140ZM340-620Zm0 280Zm280-280Zm0 280Z" />
             </ToggleIcon>
           </ListToggle>
         </ListToggleBox>
         <List>
-          <ul>
+          <ListCardBox $listToggle={listToggle}>
             {displayedItems.map((item, index) => (
-              <li key={index}>{item.name}</li> // 배열의 각 요소에 맞게 수정하세요.
+              <>
+                {listToggle ? (
+                  <ListCard key={index}>
+                    <Img src={item.img} alt="babyImg" />
+                    <TextBox>
+                      <Title>
+                        안녕하세요! 저는 <span>{item.name}</span>입니다.
+                      </Title>
+                      <Text $listToggle={listToggle}>
+                        <TextBold>{item.live}</TextBold>에 사는{" "}
+                        <TextBold>{item.age}</TextBold>살{" "}
+                        <TextBold>{item.sex}</TextBold>어린이에요.
+                      </Text>
+                      <Text02 $listToggle={listToggle}>
+                        <TextBold>{item.birth}</TextBold>에 태어났어요.
+                      </Text02>
+                    </TextBox>
+                    <BtnBox $listToggle={listToggle}>
+                      <ShareBtn>
+                        <img src={share} alt="shareImg" />
+                      </ShareBtn>
+                      <SquareBtn text="더 알아보기" btnName="childSee" />
+                      <BtnBottomBox>
+                        <CartBtn>
+                          <svg
+                            viewBox="0 -960 960 960"
+                            height="24px"
+                            width="24px"
+                            fill="#5f6368"
+                          >
+                            <path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z" />
+                          </svg>
+                        </CartBtn>
+                        <SquareColorBtn
+                          text="바로 후원하기"
+                          btnName="childNow"
+                        />
+                      </BtnBottomBox>
+                    </BtnBox>
+                  </ListCard>
+                ) : (
+                  <ListCardFalse key={item.id}>
+                    <ShareBtnBox>
+                      {/* <ShareToggleBox>
+                        <ShareToggle
+                          src="https://www.compassion.or.kr/resources/fo/compassion/assets/images/common/ico_share_facebook.png"
+                          alt=""
+                        />
+                        <ShareToggle
+                          src="https://www.compassion.or.kr/resources/fo/compassion/assets/images/common/ico_share_kakaotalk.png"
+                          alt=""
+                        />
+                        <ShareToggle
+                          src="https://www.compassion.or.kr/resources/fo/compassion/assets/images/common/ico_share_url.png"
+                          alt=""
+                        />
+                      </ShareToggleBox> */}
+                      <ShareBtn>
+                        <img src={share} alt="shareImg" />
+                      </ShareBtn>
+                    </ShareBtnBox>
+                    <Title>
+                      안녕하세요!
+                      <br />
+                      저는 <span>{item.name}</span>입니다.
+                    </Title>
+                    <FalseImg src={item.img} alt="babyImg" />
+                    <div></div>
+                    <Text $listToggle={listToggle}>
+                      <TextBold>{item.live}</TextBold>에 사는{" "}
+                      <TextBold>{item.age}</TextBold>살{" "}
+                      <TextBold>{item.sex}</TextBold>어린이에요.
+                    </Text>
+                    <Text02 $listToggle={listToggle}>
+                      <TextBold>{item.birth}</TextBold>에 태어났어요.
+                    </Text02>
+                    <BtnBox $listToggle={listToggle}>
+                      <SquareBtn text="더 알아보기" btnName="childSee" />
+                      <BtnBottomBox>
+                        <CartBtn>
+                          <svg
+                            viewBox="0 -960 960 960"
+                            height="24px"
+                            width="24px"
+                            fill="#5f6368"
+                          >
+                            <path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z" />
+                          </svg>
+                        </CartBtn>
+                        <SquareColorBtn
+                          text="바로 후원하기"
+                          btnName="childNow"
+                        />
+                      </BtnBottomBox>
+                    </BtnBox>
+                  </ListCardFalse>
+                )}
+              </>
             ))}
-          </ul>
-          {displayedItems.length < data.length && ( // 모든 아이템이 출력되지 않았을 경우에만 "더보기" 버튼 표시
-            <button onClick={getNewItems}>더보기</button>
+          </ListCardBox>
+          {displayedItems.length < data.length && (
+            <SeeMoreBtn onClick={getNewItems}>더보기</SeeMoreBtn>
           )}
         </List>
       </Inner>

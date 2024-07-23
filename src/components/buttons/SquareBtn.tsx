@@ -86,6 +86,16 @@ const Btn = styled.button`
     width: 112px;
     height: 36px;
   }
+  &.childSee {
+    width: 100%;
+    height: 48px;
+    font-size: 14px;
+    font-weight: lighter;
+    border: 1px solid ${({ theme }) => theme.colors.endeavour};
+    color: ${({ theme }) => theme.colors.endeavour};
+    background: #fff;
+    margin-top: 61px;
+  }
 `;
 
 interface squareBtnI {

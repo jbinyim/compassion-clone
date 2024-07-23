@@ -62,6 +62,10 @@ import hover07 from "./img/storypage/question/hover07.png";
 import hover08 from "./img/storypage/question/hover08.png";
 import hover09 from "./img/storypage/question/hover09.png";
 import hover10 from "./img/storypage/question/hover10.png";
+import sponsordesc01 from "./img/childrenpage/sponsor/book.png";
+import sponsordesc02 from "./img/childrenpage/sponsor/together.png";
+import sponsordesc03 from "./img/childrenpage/sponsor/body.png";
+import sponsordesc04 from "./img/childrenpage/sponsor/got.png";
 
 export const bannerImgArr = [banner01, banner02, banner03, banner04, banner05];
 
@@ -332,4 +336,84 @@ export const ctry = [
   { id: "laos", name: "라오스" },
   { id: "cambodia", name: "캄보디아" },
   { id: "emilio", name: "에밀리오" },
+];
+
+export const sponsorDescArr = [
+  {
+    img: sponsordesc01,
+    title: "지적",
+    text01: "다양한 배움으로",
+    text02: "자립 가능할 능력을 갖춰요",
+  },
+  {
+    img: sponsordesc02,
+    title: "사회정서적",
+    text01: "후원자님 사랑으로",
+    text02: "함께 살아가는 법을 배워요",
+  },
+  {
+    img: sponsordesc03,
+    title: "신체적",
+    text01: "몸과 마음의 건강을 지키고",
+    text02: "좋은 습관을 가져요",
+  },
+  {
+    img: sponsordesc04,
+    title: "영적",
+    text01: "내가 존귀한 하나님의",
+    text02: "자녀임을 알아요",
+  },
+];
+
+export const benfitListArr = [
+  {
+    id: "202407230555",
+    name: "어린이 정보",
+    text: "후원을 시작하고 2주 이내 후원 어린이 패킷(사진어린이 정보)을 받을 수 있어요 2년마다 어린이의성장 보고서를 받아볼 수 있어요",
+  },
+  {
+    id: "202407230556",
+    name: "사업 성과 보고서",
+    text: "한 해 동안 사용된 후원금 사용내역과 어린이 양육혜택을 한 눈에! 매년 사업성과보고서에서 확인할수 있어요",
+    go: "연간 리포트 보러가기",
+  },
+  {
+    id: "202407230557",
+    name: "편지 쓰기",
+    text: "한국컴패션 홈페이지, 모바일 앱에서 쉽고 빠르게 편지를 쓸 수 있어요",
+  },
+  {
+    id: "202407230558",
+    name: "컴패션 소식",
+    text: "홈페이지, SNS(페이스북, 인스타그램),네이버블로그, 카카오플러스친구, 메일뉴스레터 등을 만나보세요",
+    go: "소식 보러가기",
+  },
+  {
+    id: "202407230559",
+    name: "어린이를 위한 기도",
+    text: "후원 어린이 편지를 보면 어린이와 가족들이 후원자님을 위해 기도해 주는 것을 낄 수 있습니다 후원자님도 어린이를 위해 기도해 주세요 서로의 일상을 나누며 마음이 더 어진답니다",
+  },
+  {
+    id: "2024072305510",
+    name: "캠페인 참여",
+    text: "컴패션밴드 콘서트, 후원자 감사예배, 컴패션선데이 등 후원자와 만들어가는 다양한 동에 참여할 수 있어요!",
+    go: "캠페인/이벤트 참여하기",
+  },
+  {
+    id: "2024072305511",
+    name: "애드보킷 활동",
+    text: "정기모임, 결연행사, 바자회 등 다양한 활동을 통해 어린이들의 옹호자가 될 수 있어요",
+    go: "애드보킷 보러가기",
+  },
+  {
+    id: "2024072305512",
+    name: "비전트립",
+    text: "컴패션 어린이가 양육 받는 모습을 직접 볼 수 있는 컴패션비전트립에 참가하세요",
+    go: "비전트립 신청하기",
+  },
+  {
+    id: "2024072305513",
+    name: "함께하는 졸업식",
+    text: "어린이가 자립 가능한 성인이 되어 컴패션을 수료하면 컴패션 졸업식에 참석하실 수 있습니다",
+  },
 ];

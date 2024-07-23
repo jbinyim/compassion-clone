@@ -5,8 +5,15 @@ import bannerImg from "../img/childrenpage/bg_mtm_sponsorship_visual.jpg";
 import bannerImgRes from "../img/childrenpage/bg_mtm_sponsorship_visual_mobile.png";
 import Filter from "../components/childrenContents/Filter";
 import ChildrenList from "../components/childrenContents/ChildrenList";
+import Sponsor from "../components/childrenContents/Sponsor";
+import Support from "../components/homeContents/Support";
+import Benefit from "../components/childrenContents/Benefit";
 
 const Container = styled.div``;
+
+const SupportBox = styled.div`
+  margin-top: 180px;
+`;
 
 const ChildrenPage = () => {
   return (
@@ -27,6 +34,11 @@ const ChildrenPage = () => {
       />
       <Filter />
       <ChildrenList />
+      <Sponsor />
+      <SupportBox>
+        <Support />
+      </SupportBox>
+      <Benefit />
     </Container>
   );
 };
