@@ -9,3 +9,14 @@ export const headerMHover = atom({
   key: "mouseHover",
   default: false,
 });
+
+export const filterState = atom({
+  key: "filterState",
+  default: {
+    sex: "all",
+    age: 0,
+    live: "all",
+    birth: "",
+    what: "",
+  },
+});
