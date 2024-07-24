@@ -4,6 +4,8 @@ import { useQuery } from "@tanstack/react-query";
 import { ChildI, getBabyInfo } from "../../api";
 import SquareBtn from "../buttons/SquareBtn";
 import SquareColorBtn from "../buttons/SquareColorBtn";
+import loadingImg from "../../img/icon/loading.gif";
+import { LoadingGif } from "../childrenContents/ChildrenListStyled";
 
 const OneBabyContainer = styled.div`
   position: relative;
@@ -155,49 +157,53 @@ const SeemoreChild = styled.p`
 `;
 
 const OneBaby = () => {
-  const { data } = useQuery<ChildI[]>({
+  const { data, isLoading } = useQuery<ChildI[]>({
     queryKey: ["babyInfo"],
     queryFn: getBabyInfo,
   });
 
   let suffle = data && Number(Math.floor(Math.random() * data?.length));
 
-  return (
-    <OneBabyContainer>
-      {suffle && data && (
-        <Inner>
-          <InfoBox>
-            <Title>1:1 어린이양육</Title>
-            <Together>
-              함께 자라는 <br />
-              <span>나</span> 그리고 <span>{data[suffle].name}</span>
-            </Together>
-            <Info>
-              안녕하세요, <b>{data[suffle].live}</b>에 사는{" "}
-              <b>{data[suffle].name}</b>
-              입니다.
-              <br />
-              저는 <b>{data[suffle].age}</b>살 <b>{data[suffle].sex}</b>
-              어린이에요.
-              <br />
-              <br />
-              얼른 후원자님을 만나 편지를 주고받고 싶어요.
-              <br />
-              저의 후원자님이 되어주시겠어요?
-            </Info>
-            <BtnBox>
-              <SquareBtn text="어린이 자세히보기" btnName="seemoreChild" />
-              <SquareColorBtn text="어린이 후원하기" btnName="giveChild" />
-            </BtnBox>
-          </InfoBox>
-          <ImgBox>
-            <img src={data[suffle].img} alt="babyImg" />
-          </ImgBox>
-          <SeemoreChild>다른 어린이 더보기</SeemoreChild>
-        </Inner>
-      )}
-    </OneBabyContainer>
-  );
+  if (isLoading) {
+    return <LoadingGif src={loadingImg} alt="loading.gif" />;
+  } else {
+    return (
+      <OneBabyContainer>
+        {suffle && data && (
+          <Inner>
+            <InfoBox>
+              <Title>1:1 어린이양육</Title>
+              <Together>
+                함께 자라는 <br />
+                <span>나</span> 그리고 <span>{data[suffle].name}</span>
+              </Together>
+              <Info>
+                안녕하세요, <b>{data[suffle].live}</b>에 사는{" "}
+                <b>{data[suffle].name}</b>
+                입니다.
+                <br />
+                저는 <b>{data[suffle].age}</b>살 <b>{data[suffle].sex}</b>
+                어린이에요.
+                <br />
+                <br />
+                얼른 후원자님을 만나 편지를 주고받고 싶어요.
+                <br />
+                저의 후원자님이 되어주시겠어요?
+              </Info>
+              <BtnBox>
+                <SquareBtn text="어린이 자세히보기" btnName="seemoreChild" />
+                <SquareColorBtn text="어린이 후원하기" btnName="giveChild" />
+              </BtnBox>
+            </InfoBox>
+            <ImgBox>
+              <img src={data[suffle].img} alt="babyImg" />
+            </ImgBox>
+            <SeemoreChild>다른 어린이 더보기</SeemoreChild>
+          </Inner>
+        )}
+      </OneBabyContainer>
+    );
+  }
 };
 
 export default OneBaby;

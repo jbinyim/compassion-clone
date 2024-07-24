@@ -252,3 +252,11 @@ export const FalseImg = styled.img`
   object-fit: cover;
   object-position: top;
 `;
+
+export const LoadingGif = styled.img`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+`;

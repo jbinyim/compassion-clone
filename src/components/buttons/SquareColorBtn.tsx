@@ -54,6 +54,27 @@ const Btn = styled.button`
       background: rgb(0, 67, 129);
     }
   }
+  &.benfitBtn {
+    width: 320px;
+    height: 48px;
+    &:hover {
+      background: rgb(0, 67, 129);
+    }
+  }
+  &.childpagenow {
+    width: 180px;
+    height: 48px;
+    &:hover {
+      background: rgb(0, 67, 129);
+    }
+    @media ${({ theme }) => theme.mediaSize.xxl} {
+      max-width: 414px;
+      width: 100%;
+    }
+    @media ${({ theme }) => theme.mediaSize.l} {
+      width: 180px;
+    }
+  }
 `;
 
 interface SColorI {

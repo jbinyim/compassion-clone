@@ -31,6 +31,7 @@ import {
   ShareToggleBox,
   ShareToggle,
   FalseImg,
+  LoadingGif,
 } from "./ChildrenListStyled";
 
 const ChildrenList = () => {
@@ -58,7 +59,7 @@ const ChildrenList = () => {
     queryFn: getBabyInfo,
   });
 
-  if (isLoading) return <img src={loadingImg} alt="loading.gif" />;
+  if (isLoading) return <LoadingGif src={loadingImg} alt="loading.gif" />;
   if (!data || data.length === 0) return <div>No data available</div>;
 
   const shuffledData = [...data].sort(() => 0.5 - Math.random());
