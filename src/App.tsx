@@ -6,6 +6,7 @@ import Header from "./components/headers/Header";
 import Footer from "./components/footers/Footer";
 import StoryPage from "./routes/StoryPage";
 import ChildrenPage from "./routes/ChildrenPage";
+import SpecialPage from "./routes/SpecialPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/story" element={<StoryPage />} />
         <Route path="/children" element={<ChildrenPage />} />
+        <Route path="/special" element={<SpecialPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>

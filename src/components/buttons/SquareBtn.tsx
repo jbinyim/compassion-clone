@@ -96,6 +96,21 @@ const Btn = styled.button`
     background: #fff;
     margin-top: 61px;
   }
+  &.best {
+    max-width: 218px;
+    width: 100%;
+    height: 48px;
+  }
+  &.shareBtn {
+    max-width: 145px;
+    width: 100%;
+    height: 48px;
+    color: ${({ theme }) => theme.colors.endeavour};
+    border: 1px solid ${({ theme }) => theme.colors.endeavour};
+    @media ${({ theme }) => theme.mediaSize.l} {
+      max-width: 209px;
+    }
+  }
 `;
 
 interface squareBtnI {

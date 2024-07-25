@@ -66,6 +66,18 @@ import sponsordesc01 from "./img/childrenpage/sponsor/book.png";
 import sponsordesc02 from "./img/childrenpage/sponsor/together.png";
 import sponsordesc03 from "./img/childrenpage/sponsor/body.png";
 import sponsordesc04 from "./img/childrenpage/sponsor/got.png";
+import bestImg01 from "./img/specialpage/bestproduct/bestproduct01.png";
+import bestImg02 from "./img/specialpage/bestproduct/bestproduct02.png";
+import bestImg03 from "./img/specialpage/bestproduct/bestproduct03.png";
+import shareImg01 from "./img/specialpage/share/share01.png";
+import shareImg02 from "./img/specialpage/share/share02.png";
+import shareImg03 from "./img/specialpage/share/share03.png";
+import shareImg04 from "./img/specialpage/share/share04.jpg";
+import shareImg05 from "./img/specialpage/share/share05.png";
+import shareImg06 from "./img/specialpage/share/share06.png";
+import shareImg07 from "./img/specialpage/share/share07.png";
+import shareImg08 from "./img/specialpage/share/share08.png";
+import shareImg09 from "./img/specialpage/share/share09.png";
 
 export const bannerImgArr = [banner01, banner02, banner03, banner04, banner05];
 
@@ -486,3 +498,94 @@ export const supportFaqArr = {
     },
   ],
 };
+
+export const bestProduct = [
+  {
+    product: "product01",
+    btnclass: "best",
+    color: "#092A48",
+    img: bestImg01,
+    title: "아픈 어린이 치료하기",
+    titleEg: "Medical Assistance",
+    text: "치료제, 주사, 의료 활동... 우리에겐 당연하지만, 어떤 어린이에겐 간절할 수 있습니다.",
+    waring: "고액후원가능",
+  },
+  {
+    product: "product02",
+    btnclass: "best",
+    color: "#FFA708",
+    img: bestImg02,
+    title: "아기와 엄마 살리기",
+    titleEg: "Child Survival / Infant Survival",
+    text: "엄마와 아기의 첫 1년을 지킵니다",
+    waring: "고액후원가능",
+  },
+
+  {
+    product: "product03",
+    btnclass: "best",
+    color: "#71B2C9",
+    img: bestImg03,
+    title: "에이즈 예방과 퇴치하기",
+    titleEg: "HIV/AIDS",
+    text: "시선에 갇혀 시름하지 않도록, 어린이를 에이즈로부터 지킵니다",
+    waring: "고액후원가능",
+  },
+];
+
+export const shareList = [
+  {
+    img: shareImg01,
+    title: "취약어린이 보호하기",
+    titleEg: "Orphans and Vulnerable Children's fund",
+    text: "1분 1초가 급한 어린이들부터 구합니다",
+  },
+  {
+    img: shareImg02,
+    title: "후원자를 기다리는 어린이 돕기",
+    titleEg: "Unsponsored Children Fund",
+    text: "오랫동안 후원자를 기다리고 있는 어린이들이 있습니다",
+  },
+  {
+    img: shareImg03,
+    title: "특별교육 지원하기",
+    titleEg: "Education Fund",
+    text: "어린이가 꿈을 이룰 수 있도록 특별교육을 지원합니다",
+  },
+  {
+    img: shareImg04,
+    title: "긴급재난 돕기",
+    titleEg: "Relief Fund",
+    text: "재난으로 힘겨워하는 어린이들이 다시 꿈꿀 수 있도록 함께합니다",
+  },
+  {
+    img: shareImg05,
+    title: "깨끗한 물과 위생 지원하기",
+    titleEg: "Water Project",
+    text: "깨끗한 물 한 컵으로 한 어린이를 살릴 수 있습니다",
+  },
+  {
+    img: shareImg06,
+    title: "어린이 성경 지원하기",
+    titleEg: "Bible For All children",
+    text: "어린이 마음 속에 하나님 말씀을 선물합니다",
+  },
+  {
+    img: shareImg07,
+    title: "신규 어린이센터 설립 지원하기",
+    titleEg: "Sponsorship Launch",
+    text: "가장 가까이에서 어린이를 양육하기 위해 지역 내에 어린이센터를 설립합니다",
+  },
+  {
+    img: shareImg08,
+    title: "크리스마스 선물보내기",
+    titleEg: "Christmas Gift Fund",
+    text: "예수님탄생의 기쁨과 감사를 모든 어린이가 누릴 수 있습니다",
+  },
+  {
+    img: shareImg09,
+    title: "북한 어린이 양육 준비하기",
+    titleEg: "NK Preparation Fund",
+    text: "북한 어린이를 위한 전인적 양육을 미리 준비합니다",
+  },
+];

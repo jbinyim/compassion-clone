@@ -75,6 +75,25 @@ const Btn = styled.button`
       width: 180px;
     }
   }
+  &.best {
+    max-width: 218px;
+    width: 100%;
+    height: 48px;
+    &:hover {
+      background: rgb(0, 67, 129);
+    }
+  }
+  &.shareBtn {
+    max-width: 165px;
+    width: 100%;
+    height: 48px;
+    &:hover {
+      background: rgb(0, 67, 129);
+    }
+    @media ${({ theme }) => theme.mediaSize.l} {
+      max-width: 245px;
+    }
+  }
 `;
 
 interface SColorI {
