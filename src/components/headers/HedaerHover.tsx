@@ -3,6 +3,10 @@ import styled from "styled-components";
 import { useSetRecoilState } from "recoil";
 import { headerMHover } from "../../atoms";
 import hoverImg from "../../img/logo/10002.jpg";
+import SquareBtn from "../buttons/SquareBtn";
+import SquareColorBtn from "../buttons/SquareColorBtn";
+import { memberHeaderHoverBtn } from "../../util";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   border-top: 1px solid ${({ theme }) => theme.colors.alto};
@@ -51,6 +55,46 @@ const HoverRight = styled.div`
     width: 270px;
     height: auto;
   }
+`;
+
+const MemberContainer = styled.div`
+  width: 280px;
+  position: absolute;
+  top: 112px;
+  right: 350px;
+  background: #fff;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+`;
+
+const MemberTop = styled.div`
+  padding: 27px 40px;
+`;
+
+const MemberTitle = styled.h4`
+  font-size: 20px;
+  margin-bottom: 25px;
+  span {
+    text-decoration: underline;
+    color: ${({ theme }) => theme.colors.endeavour};
+  }
+`;
+
+const MemberListBox = styled.ul`
+  display: flex;
+  flex-direction: column;
+`;
+
+const MemberList = styled.li`
+  padding: 16px 38px;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const MemberText = styled.p`
+  font-size: 14px;
 `;
 
 interface hoverI {
@@ -178,6 +222,38 @@ const HedaerHover = ({ menuId }: hoverI) => {
           </HoverRight>
         </HoverBox>
       </Container>
+    );
+  } else if (menuId === 5) {
+    return (
+      <MemberContainer>
+        <MemberTop>
+          <MemberTitle>
+            <span>후원자님</span>, 반갑습니다!
+          </MemberTitle>
+          <Link to={"/login"}>
+            <SquareBtn text="로그인 / Sign in" btnName="signIn" />
+          </Link>
+          <Link to={"/member"}>
+            <SquareColorBtn text="회원가입 / Sign up" btnName="signUp" />
+          </Link>
+        </MemberTop>
+        <MemberListBox>
+          {memberHeaderHoverBtn.map((item, idx) => (
+            <MemberList key={idx}>
+              <MemberText>{item}</MemberText>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#5f6368"
+              >
+                <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
+              </svg>
+            </MemberList>
+          ))}
+        </MemberListBox>
+      </MemberContainer>
     );
   } else {
     return <></>;

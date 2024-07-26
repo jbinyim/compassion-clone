@@ -5,6 +5,7 @@ import bannerImg from "../img/specialpage/banner.png";
 import bannerResImg from "../img/specialpage/bannerRes.png";
 import SpecialBestProduct from "../components/specialContents/SpecialBestProduct";
 import SpecialShare from "../components/specialContents/SpecialShare";
+import SpecialTogater from "../components/specialContents/SpecialTogater";
 
 const SpecialPage = () => {
   return (
@@ -17,6 +18,7 @@ const SpecialPage = () => {
       />
       <SpecialBestProduct />
       <SpecialShare />
+      <SpecialTogater />
     </div>
   );
 };

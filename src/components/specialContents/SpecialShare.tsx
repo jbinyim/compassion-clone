@@ -1,12 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import bg from "../../img/specialpage/share/bg02.png";
+import quote from "../../img/icon/ico_quotes_53x38.png";
+import bgLine from "../../img/specialpage/bestproduct/bg_special_sponsorship_line.png";
 import { shareList } from "../../util";
 import SquareBtn from "../buttons/SquareBtn";
 import SquareColorBtn from "../buttons/SquareColorBtn";
 
 const Container = styled.div`
   margin-top: 75px;
+  padding-bottom: 300px;
 `;
 
 const Bg = styled.div`
@@ -20,6 +23,15 @@ const Bg = styled.div`
     width: 100%;
     height: 100%;
     background: url(${bg}) no-repeat center top;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -400px;
+    left: 0;
+    width: 100%;
+    height: 575px;
+    background: url(${bgLine}) center/cover no-repeat;
   }
 `;
 
@@ -40,6 +52,21 @@ const SubTitle = styled.h4`
   font-size: 32px;
   font-weight: bold;
   color: ${({ theme }) => theme.colors.green};
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: 15%;
+    width: 53px;
+    height: 38px;
+    background: url(${quote}) center/cover no-repeat;
+    opacity: 0.3;
+    @media ${({ theme }) => theme.mediaSize.m} {
+      width: 26px;
+      height: 19px;
+    }
+  }
   @media ${({ theme }) => theme.mediaSize.xl} {
     font-size: 26px;
   }

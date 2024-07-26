@@ -78,6 +78,10 @@ import shareImg06 from "./img/specialpage/share/share06.png";
 import shareImg07 from "./img/specialpage/share/share07.png";
 import shareImg08 from "./img/specialpage/share/share08.png";
 import shareImg09 from "./img/specialpage/share/share09.png";
+import togeterImg01 from "./img/specialpage/togeter/togeter01.jpg";
+import togeterImg02 from "./img/specialpage/togeter/togeter02.jpg";
+import togeterImg03 from "./img/specialpage/togeter/togeter03.jpg";
+import togeterImg04 from "./img/specialpage/togeter/togeter04.jpg";
 
 export const bannerImgArr = [banner01, banner02, banner03, banner04, banner05];
 
@@ -588,4 +592,48 @@ export const shareList = [
     titleEg: "NK Preparation Fund",
     text: "북한 어린이를 위한 전인적 양육을 미리 준비합니다",
   },
+];
+
+export const togeterArr = [
+  {
+    img: togeterImg01,
+    title: "아이티 구호 긴급모금",
+    clear: "44",
+    day: "158",
+    nowmoney: "21,757,175",
+    maxmoney: "50,000,000",
+  },
+  {
+    img: togeterImg02,
+    title: "화장실로 지키는 어린이들의 존엄성",
+    clear: "14",
+    day: "158",
+    nowmoney: "7,825,700",
+    maxmoney: "53,980,000",
+  },
+  {
+    img: togeterImg03,
+    title: "가난을 이길 수 있는 교육의 기회",
+    clear: "53",
+    day: "97",
+    nowmoney: "104,134,278",
+    maxmoney: "194,790,000",
+  },
+  {
+    img: togeterImg04,
+    title: "깨끗한 물을 통해 피어나는 행복의 꽃",
+    clear: "102",
+    day: "x",
+    nowmoney: "178,207,896",
+    maxmoney: "174,190,000",
+  },
+];
+
+export const memberHeaderHoverBtn = [
+  "나의 정기후원현황",
+  "나의 후원금",
+  "나의 편지",
+  "나의 컴패션 활동",
+  "나의 문의",
+  "Sign in for English users",
 ];

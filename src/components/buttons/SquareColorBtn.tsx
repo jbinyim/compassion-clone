@@ -94,6 +94,11 @@ const Btn = styled.button`
       max-width: 245px;
     }
   }
+  &.signUp {
+    width: 200px;
+    height: 48px;
+    margin-bottom: 20px;
+  }
 `;
 
 interface SColorI {

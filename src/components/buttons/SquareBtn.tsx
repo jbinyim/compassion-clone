@@ -111,6 +111,13 @@ const Btn = styled.button`
       max-width: 209px;
     }
   }
+  &.signIn {
+    width: 200px;
+    height: 48px;
+    border: 1px solid ${({ theme }) => theme.colors.endeavour};
+    color: ${({ theme }) => theme.colors.endeavour};
+    margin-bottom: 10px;
+  }
 `;
 
 interface squareBtnI {
