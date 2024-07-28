@@ -61,6 +61,7 @@ const Login = () => {
             alt="kako"
           />
           <KakoText>카카오계정 로그인</KakoText>
+          <p>f</p>
         </KakoBox>
       </Box>
     </Container>
