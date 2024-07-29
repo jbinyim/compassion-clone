@@ -118,6 +118,20 @@ const Btn = styled.button`
     color: ${({ theme }) => theme.colors.endeavour};
     margin-bottom: 10px;
   }
+  &.errBtn {
+    max-width: 280px;
+    width: 100%;
+    height: 48px;
+    color: ${({ theme }) => theme.colors.gray};
+    border: 1px solid ${({ theme }) => theme.colors.gray};
+  }
+  &.modalBtn {
+    max-width: 180px;
+    width: 100%;
+    height: 48px;
+    color: ${({ theme }) => theme.colors.gray};
+    border: 1px solid ${({ theme }) => theme.colors.gray};
+  }
 `;
 
 interface squareBtnI {

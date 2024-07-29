@@ -98,6 +98,33 @@ const Btn = styled.button`
     width: 200px;
     height: 48px;
     margin-bottom: 20px;
+    &.login {
+      max-width: 282px;
+      width: 100%;
+      margin-bottom: 0;
+      @media ${({ theme }) => theme.mediaSize.m} {
+        max-width: 414px;
+      }
+      &:hover {
+        background: rgb(0, 67, 129);
+      }
+    }
+  }
+  &.errBtn {
+    max-width: 280px;
+    width: 100%;
+    height: 48px;
+    &:hover {
+      background: rgb(0, 67, 129);
+    }
+  }
+  &.modalBtn {
+    max-width: 180px;
+    width: 100%;
+    height: 48px;
+    &:hover {
+      background: rgb(0, 67, 129);
+    }
   }
 `;
 

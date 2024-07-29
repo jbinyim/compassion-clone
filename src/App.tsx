@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./routes/Home";
 import ScrollToTop from "./ScrollToTop";
 import Header from "./components/headers/Header";
@@ -9,22 +9,47 @@ import ChildrenPage from "./routes/ChildrenPage";
 import SpecialPage from "./routes/SpecialPage";
 import Member from "./routes/Member";
 import Login from "./routes/Login";
+import NotFindPage from "./routes/NotFindPage";
+import CheckIdentify from "./components/registor/CheckIdentify";
+
+const routes = [
+  { path: "/", element: <Home /> },
+  { path: "/story", element: <StoryPage /> },
+  { path: "/children", element: <ChildrenPage /> },
+  { path: "/special", element: <SpecialPage /> },
+  { path: "/member", element: <Member /> },
+  { path: "/member/checkIdentify", element: <CheckIdentify /> },
+  { path: "/login", element: <Login /> },
+];
 
 function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/story" element={<StoryPage />} />
-        <Route path="/children" element={<ChildrenPage />} />
-        <Route path="/special" element={<SpecialPage />} />
-        <Route path="/member" element={<Member />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-      <Footer />
+      <MainContent />
     </BrowserRouter>
+  );
+}
+
+function MainContent() {
+  const location = useLocation();
+  const isNotFoundPage = !routes.some(
+    (route) => route.path === location.pathname
+  );
+
+  return (
+    <>
+      {!isNotFoundPage && <Header />}
+
+      <Routes>
+        {routes.map((route) => (
+          <Route key={route.path} path={route.path} element={route.element} />
+        ))}
+        <Route path="*" element={<NotFindPage />} />
+      </Routes>
+
+      {!isNotFoundPage && <Footer />}
+    </>
   );
 }
 

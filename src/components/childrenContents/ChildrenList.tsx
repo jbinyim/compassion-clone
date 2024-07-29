@@ -4,6 +4,8 @@ import { useMediaQuery } from "react-responsive";
 import SquareBtn from "../buttons/SquareBtn";
 import SquareColorBtn from "../buttons/SquareColorBtn";
 import { ChildI, getBabyInfo } from "../../api";
+import { useRecoilState } from "recoil";
+import { modalId } from "../../atoms";
 import share from "../../img/childrenpage/ico_sns_share.png";
 import loadingImg from "../../img/icon/loading.gif";
 import {
@@ -33,12 +35,14 @@ import {
   FalseImg,
   LoadingGif,
 } from "./ChildrenListStyled";
+import Modal from "../modals/Modal";
 
 const ChildrenList = () => {
   const [listToggle, setListToggle] = useState(true);
   const [displayedItems, setDisplayedItems] = useState<ChildI[]>([]);
   const [itemsToShow, setItemsToShow] = useState(6);
   const [shareToggle, setShareToggle] = useState(false);
+  const [modalToggle, setModalToggle] = useRecoilState(modalId);
 
   const xl = useMediaQuery({ maxWidth: 1024 });
 
@@ -83,7 +87,10 @@ const ChildrenList = () => {
     getNewItems();
   }
 
-  console.log(listToggle);
+  const goToModal = (num: string) => {
+    setModalToggle(num);
+  };
+
   return (
     <Container>
       <Inner>
@@ -131,7 +138,9 @@ const ChildrenList = () => {
                       <ShareBtn>
                         <img src={share} alt="shareImg" />
                       </ShareBtn>
-                      <SquareBtn text="더 알아보기" btnName="childSee" />
+                      <span onClick={() => goToModal(item.number)}>
+                        <SquareBtn text="더 알아보기" btnName="childSee" />
+                      </span>
                       <BtnBottomBox>
                         <CartBtn>
                           <svg
@@ -153,20 +162,6 @@ const ChildrenList = () => {
                 ) : (
                   <ListCardFalse key={item.id}>
                     <ShareBtnBox>
-                      {/* <ShareToggleBox>
-                        <ShareToggle
-                          src="https://www.compassion.or.kr/resources/fo/compassion/assets/images/common/ico_share_facebook.png"
-                          alt=""
-                        />
-                        <ShareToggle
-                          src="https://www.compassion.or.kr/resources/fo/compassion/assets/images/common/ico_share_kakaotalk.png"
-                          alt=""
-                        />
-                        <ShareToggle
-                          src="https://www.compassion.or.kr/resources/fo/compassion/assets/images/common/ico_share_url.png"
-                          alt=""
-                        />
-                      </ShareToggleBox> */}
                       <ShareBtn>
                         <img src={share} alt="shareImg" />
                       </ShareBtn>
@@ -215,6 +210,7 @@ const ChildrenList = () => {
           )}
         </List>
       </Inner>
+      {modalToggle !== "0" && <Modal />}
     </Container>
   );
 };

@@ -14,6 +14,7 @@ export const FilterBox = styled.div<{ $toggle: boolean }>`
   padding: 40px 56px;
   box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.15);
   transition: all 0.3s;
+  box-sizing: content-box;
 `;
 
 export const TitleBox = styled.div`

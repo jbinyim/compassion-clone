@@ -157,6 +157,9 @@ export const BtnBox = styled.div<{ $listToggle: boolean }>`
   justify-content: center;
   align-items: flex-end;
   margin-right: 56px;
+  span {
+    width: 100%;
+  }
 `;
 
 export const ShareBtn = styled.button`
@@ -218,6 +221,7 @@ export const ListCardFalse = styled.li`
   border: 2px solid transparent;
   transition: all 0.3s;
   text-align: center;
+  box-sizing: content-box;
   &:hover {
     border: 2px solid ${({ theme }) => theme.colors.endeavour};
     background: ${({ theme }) => theme.colors.iceberg};

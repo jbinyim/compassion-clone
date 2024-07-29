@@ -20,3 +20,8 @@ export const filterState = atom({
     what: "",
   },
 });
+
+export const modalId = atom({
+  key: "modalId",
+  default: "0",
+});

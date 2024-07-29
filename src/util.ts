@@ -82,6 +82,19 @@ import togeterImg01 from "./img/specialpage/togeter/togeter01.jpg";
 import togeterImg02 from "./img/specialpage/togeter/togeter02.jpg";
 import togeterImg03 from "./img/specialpage/togeter/togeter03.jpg";
 import togeterImg04 from "./img/specialpage/togeter/togeter04.jpg";
+import modalIcon01 from "./img/icon/ico_children_number.png";
+import modalIcon02 from "./img/icon/ico_children_family.png";
+import modalIcon03 from "./img/icon/ico_children_birth.png";
+import modalIcon04 from "./img/icon/ico_children_favorite.png";
+import modalIcon05 from "./img/icon/ico_children_home.png";
+import modalImg01 from "./img/modal/modal01.png";
+import modalImg02 from "./img/modal/modal02.png";
+import modalImg03 from "./img/modal/modal03.png";
+import modalImg04 from "./img/modal/modal04.png";
+import modalImg05 from "./img/modal/modal05.png";
+import modalImg06 from "./img/modal/modal06.png";
+import modalImg07 from "./img/modal/modal07.png";
+import modalImg08 from "./img/modal/modal08.png";
 
 export const bannerImgArr = [banner01, banner02, banner03, banner04, banner05];
 
@@ -636,4 +649,63 @@ export const memberHeaderHoverBtn = [
   "나의 컴패션 활동",
   "나의 문의",
   "Sign in for English users",
+];
+
+export const modalIconArr = [
+  modalIcon01,
+  modalIcon02,
+  modalIcon03,
+  modalIcon04,
+  modalIcon05,
+];
+
+export const modalImg = [
+  {
+    id: "modal01",
+    img: modalImg01,
+    title: "학교교육",
+    text: "어린이가 학교에 다닐 수 있도록 돕고 기본적인 교육 외 교복, 학용품, 추가 학비를 지원합니다. 야외활동 및 체육, 음악, 미술 등의 특별활동도 제공합니다.",
+  },
+  {
+    id: "modal02",
+    img: modalImg02,
+    title: "직업/기술 교육",
+    text: "수입 창출 능력을 갖추고 실질적인 기술을 배우도록 지원합니다. 연령과 적성에 맞는 다양한 직업훈련 프로그램과 멘토링을 운영하여 어린이의 자립을 돕습니다.",
+  },
+  {
+    id: "modal03",
+    img: modalImg03,
+    title: "의료혜택",
+    text: "어린이가 건강하게 성장하며 양육 받을 수 있도록 정기적인 건강검진 및 예방접종을 실시합니다. 또한 필요한 의료 혜택도 함께 지원합니다.",
+  },
+  {
+    id: "modal04",
+    img: modalImg04,
+    title: "영양/위생 지원",
+    text: "어린이에게 균형 잡힌 식사(영양식)와 간식을 제공합니다. 위생적인 환경에서 자랄 수 있도록 깨끗한 물 제공은 물론 정기적인 위생교육을 실시합니다.",
+  },
+  {
+    id: "modal05",
+    img: modalImg05,
+    title: "영적활동",
+    text: "연령에 맞는 성경 책이 제공되며 성경에 대한 이해, 예배, 기도, 성경공부 등 다양한 신앙 활동을 통해 예수님의 사랑을 배웁니다.",
+  },
+  {
+    id: "modal06",
+    img: modalImg06,
+    title: "사회/정서적 개발",
+    text: "또래관계, 그룹활동, 봉사활동 등을 통해 타인과 조화롭게 살아가는 법을 배우고 자기관리와 책임감 있는 선택 그리고 대인관계 기술을 배웁니다.",
+  },
+  {
+    id: "modal07",
+    img: modalImg07,
+    title: "어린이 ㅣ보호",
+    text: "어린이가 존귀하게 여겨지고 '어린이답게' 성장할 수 있도록 보호합니다. 또한 아동노동, 학대나 차별 등의 대우로부터 지키며 필요시 상담치료를 제공합니다.",
+  },
+  {
+    id: "modal08",
+    img: modalImg08,
+    title: "유대감 형성",
+    text: "어린이들은 후원자와 편지 등을 통해 지속적인 유대관계를 맺게 됩니다. 이를 통해 내 편이 있다는 사실을 깨닫고, 사랑받고 존중받으며 자라납니다.",
+  },
 ];
