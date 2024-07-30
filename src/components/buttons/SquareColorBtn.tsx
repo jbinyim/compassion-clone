@@ -50,6 +50,7 @@ const Btn = styled.button`
   }
   &.childNow {
     width: 100%;
+    height: 48px;
     &:hover {
       background: rgb(0, 67, 129);
     }
@@ -124,6 +125,9 @@ const Btn = styled.button`
     height: 48px;
     &:hover {
       background: rgb(0, 67, 129);
+    }
+    @media ${({ theme }) => theme.mediaSize.l} {
+      max-width: 100%;
     }
   }
 `;

@@ -182,6 +182,9 @@ export const BtnBottomBox = styled.div`
   margin-top: 8px;
   display: flex;
   gap: 8px;
+  span {
+    width: 100%;
+  }
 `;
 
 export const CartBtn = styled.button`

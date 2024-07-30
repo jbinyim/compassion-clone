@@ -131,6 +131,9 @@ const Btn = styled.button`
     height: 48px;
     color: ${({ theme }) => theme.colors.gray};
     border: 1px solid ${({ theme }) => theme.colors.gray};
+    @media ${({ theme }) => theme.mediaSize.l} {
+      max-width: 100%;
+    }
   }
 `;
 

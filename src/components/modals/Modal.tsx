@@ -3,10 +3,12 @@ import styled from "styled-components";
 import { useRecoilState } from "recoil";
 import { modalId } from "../../atoms";
 import { useQuery } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
 import { getBabyInfo, ChildI } from "../../api";
 import { modalIconArr, modalImg } from "../../util";
 import SquareBtn from "../buttons/SquareBtn";
 import SquareColorBtn from "../buttons/SquareColorBtn";
+import cardImg from "../../img/modal/modalIcon.png";
 
 const Container = styled.div`
   position: fixed;
@@ -26,8 +28,18 @@ const Inner = styled.div`
   width: 100%;
   height: 100%;
   background: #fff;
-  margin-top: 50px;
-  overflow-y: scroll;
+  margin-top: 10px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overscroll-behavior: none;
+  z-index: 12;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  @media ${({ theme }) => theme.mediaSize.xxl} {
+    margin: 0 4%;
+  }
 `;
 
 const Top = styled.div`
@@ -48,10 +60,31 @@ const Mid = styled.div`
   padding: 0 102px;
   display: flex;
   gap: 100px;
+  @media ${({ theme }) => theme.mediaSize.xxl} {
+    gap: 50px;
+    div {
+      max-width: 100%;
+      height: 100%;
+    }
+  }
+  @media ${({ theme }) => theme.mediaSize.l} {
+    flex-direction: column;
+    padding: 0 4%;
+    gap: 0;
+  }
 `;
 
 const Img = styled.img`
-  width: 384px;
+  max-width: 384px;
+  width: 100%;
+  @media ${({ theme }) => theme.mediaSize.xxl} {
+    width: 40%;
+    height: 100%;
+  }
+  @media ${({ theme }) => theme.mediaSize.l} {
+    max-width: 100%;
+    width: 100%;
+  }
 `;
 
 const MidTitle = styled.h4`
@@ -59,6 +92,9 @@ const MidTitle = styled.h4`
   font-weight: bold;
   margin-bottom: 45px;
   margin-top: 50px;
+  @media ${({ theme }) => theme.mediaSize.xxl} {
+    margin-bottom: 20px;
+  }
 `;
 
 const BoldBlue = styled.span`
@@ -81,6 +117,9 @@ const MidText = styled.p<{ $icon: string }>`
     background: url(${(props) => props.$icon}) no-repeat center;
     background-size: 24px;
   }
+  @media ${({ theme }) => theme.mediaSize.xxl} {
+    font-size: 14px;
+  }
 `;
 
 const BlodBlack = styled.span`
@@ -91,12 +130,22 @@ const BlueText = styled.p`
   font-size: 16px;
   color: ${({ theme }) => theme.colors.endeavour};
   margin-top: 30px;
+  @media ${({ theme }) => theme.mediaSize.xxl} {
+    font-size: 14px;
+    margin-top: 15px;
+  }
 `;
 
 const BtnBox = styled.div`
   display: flex;
   gap: 10px;
   margin-top: 50px;
+  span {
+    width: 100%;
+  }
+  @media ${({ theme }) => theme.mediaSize.xxl} {
+    margin-top: 25px;
+  }
 `;
 
 const Bottom = styled.div`
@@ -107,6 +156,9 @@ const BottomTitle = styled.h4`
   font-size: 32px;
   font-weight: 700;
   text-align: center;
+  @media ${({ theme }) => theme.mediaSize.l} {
+    font-size: 20px;
+  }
 `;
 
 const CardBox = styled.ul`
@@ -114,6 +166,9 @@ const CardBox = styled.ul`
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   margin-top: 56px;
+  @media ${({ theme }) => theme.mediaSize.l} {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 const Card = styled.li`
@@ -133,13 +188,41 @@ const ModalBottom = styled.div`
 `;
 
 const ModalBottomTitle = styled.h4`
-  padding: 16px 24px;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.gray};
+  padding: 24px 100px;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.geyser};
   font-size: 20px;
   font-weight: bold;
   color: ${({ theme }) => theme.colors.endeavour};
+  position: relative;
   &::before {
     content: "";
+    position: absolute;
+    top: 50%;
+    left: 24px;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: url(${cardImg}) no-repeat 0 0;
+    background-size: 60px;
+  }
+  &.modal02::before {
+    background-position: 0 -120px;
+  }
+  &.modal03::before {
+    background-position: 0 -60px;
+  }
+  &.modal04::before {
+    background-position: 0 -240px;
+  }
+  &.modal05::before {
+    background-position: 0 -180px;
+  }
+  &.modal06::before,
+  &.modal07::before {
+    background-position: 0 -420px;
+  }
+  &.modal08::before {
+    background-position: 0 -360px;
   }
 `;
 const ModalBottomText = styled.p`
@@ -148,6 +231,7 @@ const ModalBottomText = styled.p`
 `;
 
 const Modal = () => {
+  const navigate = useNavigate();
   const [modalToggle, setModalToggle] = useRecoilState(modalId);
 
   const { data, isLoading } = useQuery<ChildI[]>({
@@ -156,6 +240,10 @@ const Modal = () => {
   });
 
   const isModal = data?.find((item) => item.number === modalToggle);
+
+  const goToSponsor = (num: string) => {
+    navigate(`/sponsor?childId=${num}`);
+  };
 
   const loading = isLoading && isModal;
 
@@ -220,7 +308,11 @@ const Modal = () => {
               </BlueText>
               <BtnBox>
                 <SquareBtn text="기억해 둘래요" btnName="modalBtn" />
-                <SquareColorBtn text="바로 후원하기" btnName="modalBtn" />
+                {isModal && (
+                  <span onClick={() => goToSponsor(isModal.number)}>
+                    <SquareColorBtn text="바로 후원하기" btnName="modalBtn" />
+                  </span>
+                )}
               </BtnBox>
             </div>
           </Mid>
@@ -235,7 +327,9 @@ const Modal = () => {
                 <Card key={item.id}>
                   <CardImg src={item.img} alt="modalimg" />
                   <ModalBottom>
-                    <ModalBottomTitle>{item.title}</ModalBottomTitle>
+                    <ModalBottomTitle className={item.id}>
+                      {item.title}
+                    </ModalBottomTitle>
                     <ModalBottomText>{item.text}</ModalBottomText>
                   </ModalBottom>
                 </Card>

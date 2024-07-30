@@ -11,12 +11,14 @@ import Member from "./routes/Member";
 import Login from "./routes/Login";
 import NotFindPage from "./routes/NotFindPage";
 import CheckIdentify from "./components/registor/CheckIdentify";
+import SponsorPage from "./routes/SponsorPage";
 
 const routes = [
   { path: "/", element: <Home /> },
   { path: "/story", element: <StoryPage /> },
   { path: "/children", element: <ChildrenPage /> },
   { path: "/special", element: <SpecialPage /> },
+  { path: "/sponsor/*", element: <SponsorPage /> },
   { path: "/member", element: <Member /> },
   { path: "/member/checkIdentify", element: <CheckIdentify /> },
   { path: "/login", element: <Login /> },
@@ -39,16 +41,16 @@ function MainContent() {
 
   return (
     <>
-      {!isNotFoundPage && <Header />}
-
+      {/* {!isNotFoundPage && <Header />} */}
+      <Header />
       <Routes>
         {routes.map((route) => (
           <Route key={route.path} path={route.path} element={route.element} />
         ))}
         <Route path="*" element={<NotFindPage />} />
       </Routes>
-
-      {!isNotFoundPage && <Footer />}
+      <Footer />
+      {/* {!isNotFoundPage && <Footer />} */}
     </>
   );
 }

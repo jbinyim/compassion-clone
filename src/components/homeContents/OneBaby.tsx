@@ -1,11 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import { useQuery } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { modalId } from "../../atoms";
 import { ChildI, getBabyInfo } from "../../api";
 import SquareBtn from "../buttons/SquareBtn";
 import SquareColorBtn from "../buttons/SquareColorBtn";
 import loadingImg from "../../img/icon/loading.gif";
 import { LoadingGif } from "../childrenContents/ChildrenListStyled";
+import Modal from "../modals/Modal";
 
 const OneBabyContainer = styled.div`
   position: relative;
@@ -157,12 +161,22 @@ const SeemoreChild = styled.p`
 `;
 
 const OneBaby = () => {
+  const navigate = useNavigate();
+  const [modalToggle, setModalToggle] = useRecoilState(modalId);
   const { data, isLoading } = useQuery<ChildI[]>({
     queryKey: ["babyInfo"],
     queryFn: getBabyInfo,
   });
 
-  let suffle = data && Number(Math.floor(Math.random() * data?.length));
+  const suffle = data && Number(Math.floor(Math.random() * data?.length));
+
+  const goToModal = (num: string) => {
+    setModalToggle(num);
+  };
+
+  const goToSponsor = (num: string) => {
+    navigate(`/sponsor?childId=${num}`);
+  };
 
   if (isLoading) {
     return <LoadingGif src={loadingImg} alt="loading.gif" />;
@@ -191,8 +205,12 @@ const OneBaby = () => {
                 저의 후원자님이 되어주시겠어요?
               </Info>
               <BtnBox>
-                <SquareBtn text="어린이 자세히보기" btnName="seemoreChild" />
-                <SquareColorBtn text="어린이 후원하기" btnName="giveChild" />
+                <span onClick={() => goToModal(data[suffle].number)}>
+                  <SquareBtn text="어린이 자세히보기" btnName="seemoreChild" />
+                </span>
+                <span onClick={() => goToSponsor(data[suffle].number)}>
+                  <SquareColorBtn text="어린이 후원하기" btnName="giveChild" />
+                </span>
               </BtnBox>
             </InfoBox>
             <ImgBox>
@@ -201,6 +219,7 @@ const OneBaby = () => {
             <SeemoreChild>다른 어린이 더보기</SeemoreChild>
           </Inner>
         )}
+        {modalToggle !== "0" && <Modal />}
       </OneBabyContainer>
     );
   }
