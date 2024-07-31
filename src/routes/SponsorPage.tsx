@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import BannerColor from "../components/slides/BannerColor";
 import Cards from "../components/SponsorContents/Cards";
+import SponChose from "../components/SponsorContents/SponChose";
 
 const Container = styled.div``;
 
@@ -40,6 +41,7 @@ const SponsorPage = () => {
         </p>
       </Wraning>
       <Cards />
+      <SponChose />
     </Container>
   );
 };

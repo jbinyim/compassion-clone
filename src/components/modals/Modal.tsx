@@ -243,6 +243,7 @@ const Modal = () => {
 
   const goToSponsor = (num: string) => {
     navigate(`/sponsor?childId=${num}`);
+    setModalToggle("0");
   };
 
   const loading = isLoading && isModal;

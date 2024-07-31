@@ -6,7 +6,6 @@ import theme from "./theme";
 import { RecoilRoot } from "recoil";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter } from "react-router-dom";
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
