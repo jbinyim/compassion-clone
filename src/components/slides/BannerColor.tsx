@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  margin-top: 113px;
+  margin-top: 50px;
 `;
 
 const Banner = styled.div`
@@ -14,6 +14,10 @@ const Banner = styled.div`
   justify-content: center;
   font-size: 32px;
   font-weight: 400;
+  @media ${({ theme }) => theme.mediaSize.l} {
+    height: 100px;
+    font-size: 24px;
+  }
 `;
 
 const GraphBox = styled.div`
@@ -24,11 +28,13 @@ const GraphBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media ${({ theme }) => theme.mediaSize.l} {
+    padding: 0 4%;
+  }
 `;
 
 const GraphInner = styled.div`
   display: flex;
-  /* gap: 100px; */
   p {
     text-align: center;
     width: 233px;
@@ -60,6 +66,12 @@ const GraphInner = styled.div`
         width: 88%;
         height: 2px;
         background: ${({ theme }) => theme.colors.geyser};
+        @media ${({ theme }) => theme.mediaSize.l} {
+          width: 86%;
+        }
+        @media ${({ theme }) => theme.mediaSize.m} {
+          width: 83%;
+        }
       }
     }
     &:nth-child(2) {
@@ -86,6 +98,15 @@ const GraphInner = styled.div`
           no-repeat center;
         background-size: 100%;
       }
+    }
+    @media ${({ theme }) => theme.mediaSize.l} {
+      width: 150px;
+      font-size: 16px;
+    }
+    @media ${({ theme }) => theme.mediaSize.m} {
+      width: 120px;
+      letter-spacing: -1px;
+      font-size: 14px;
     }
   }
 `;

@@ -1,4 +1,4 @@
-import { atom } from "recoil";
+import { atom, atomFamily } from "recoil";
 
 export const headerToggleBtn = atom({
   key: "menuToggle",
@@ -24,4 +24,14 @@ export const filterState = atom({
 export const modalId = atom({
   key: "modalId",
   default: "0",
+});
+
+export const sponState = atomFamily({
+  key: "sponState",
+  default: (id) => {
+    return {
+      id,
+      pay: "0",
+    };
+  },
 });

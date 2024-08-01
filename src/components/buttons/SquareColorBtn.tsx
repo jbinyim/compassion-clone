@@ -130,6 +130,14 @@ const Btn = styled.button`
       max-width: 100%;
     }
   }
+  &.payBtn {
+    max-width: 588px;
+    width: 100%;
+    height: 48px;
+    &:hover {
+      background: rgb(0, 67, 129);
+    }
+  }
 `;
 
 interface SColorI {

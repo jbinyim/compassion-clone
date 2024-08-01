@@ -61,10 +61,19 @@ const MemberContainer = styled.div`
   width: 280px;
   position: absolute;
   top: 112px;
-  right: 350px;
+  right: 15%;
   background: #fff;
   box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
+  @media ${({ theme }) => theme.mediaSize.xxxl} {
+    right: 5%;
+  }
+  @media ${({ theme }) => theme.mediaSize.l} {
+    top: 85px;
+  }
+  @media ${({ theme }) => theme.mediaSize.m} {
+    top: 61px;
+  }
 `;
 
 const MemberTop = styled.div`

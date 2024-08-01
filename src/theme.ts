@@ -33,8 +33,6 @@ const colors = {
   funBlue: "#205eac",
 };
 
-const fontSize = {};
-
 const mediaSize = {
   xs: "screen and (max-width: 320px)",
   s: "screen and (max-width: 375px)",
@@ -47,7 +45,6 @@ const mediaSize = {
 
 const theme = {
   colors,
-  fontSize,
   mediaSize,
 };
 

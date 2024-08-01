@@ -15,8 +15,14 @@ const CardBox = styled.div`
   height: 282px;
   display: flex;
   gap: 40px;
-  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.15);
+  background: #fff;
   margin-bottom: 64px;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.15);
+  @media ${({ theme }) => theme.mediaSize.l} {
+    height: 100%;
+    flex-direction: column;
+    gap: 0;
+  }
 `;
 
 const Img = styled.img`
@@ -25,11 +31,18 @@ const Img = styled.img`
   height: 100%;
   object-fit: cover;
   object-position: top;
+  @media ${({ theme }) => theme.mediaSize.l} {
+    max-width: 100%;
+    height: 300px;
+  }
 `;
 
 const Card = styled.div`
   padding: 40px 40px 0 0;
   width: 100%;
+  @media ${({ theme }) => theme.mediaSize.l} {
+    padding: 30px;
+  }
 `;
 
 const BlueTitle = styled.p`

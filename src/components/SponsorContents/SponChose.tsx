@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Range } from "react-range";
+import { useRecoilState } from "recoil";
+import { sponState } from "../../atoms";
 
 const Container = styled.div`
   max-width: 1200px;
@@ -10,17 +12,43 @@ const Container = styled.div`
 
 const Box = styled.div`
   display: flex;
+  @media ${({ theme }) => theme.mediaSize.l} {
+    flex-direction: column;
+  }
 `;
 
 const Label = styled.label`
-  width: 270px;
+  width: 300px;
   margin: 0 30px 0;
+  @media ${({ theme }) => theme.mediaSize.l} {
+    margin-left: 37px;
+  }
+`;
+
+const CheckBox = styled.input<{ $isChecked: boolean }>`
+  position: relative;
+  height: 0;
+  width: 32px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    background: url("https://www.compassion.or.kr/resources/fo/compassion/assets/images/common/ico_circle_check_24x24.png")
+      no-repeat center;
+    background-size: 100%;
+    background-position: ${(props) => (props.$isChecked ? "0 -32px" : "0 0")};
+    cursor: pointer;
+  }
 `;
 
 const LabelText = styled.span`
   font-size: 16px;
   letter-spacing: -1px;
   line-height: 30px;
+  cursor: pointer;
   p {
     font-size: 20px;
     font-weight: 400;
@@ -37,7 +65,9 @@ const RangeBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.gray};
+  @media ${({ theme }) => theme.mediaSize.l} {
+    margin-top: 50px;
+  }
 `;
 
 const Track = styled.div`
@@ -59,10 +89,10 @@ const TrackNum = styled.div`
   justify-content: space-between;
 `;
 
-const Thumb = styled.div`
+const Thumb = styled.div<{ $isChecked: boolean }>`
   width: 24px;
   height: 24px;
-  background: ${({ theme }) => theme.colors.endeavour};
+  background: ${({ $isChecked }) => ($isChecked ? "#005eb8" : "#e0e0e0")};
   border-radius: 100%;
   position: absolute;
   top: 0;
@@ -102,21 +132,54 @@ const Input = styled.input`
   outline: none;
   text-align: right !important;
   padding: 0 12px;
+  @media ${({ theme }) => theme.mediaSize.l} {
+    height: 40px;
+    font-size: 20px;
+  }
 `;
 
-const SponChose = () => {
+interface sponChoseI {
+  max: number;
+  title: string;
+  title2: string;
+  text: string;
+  boxname: string;
+}
+
+const SponChose = ({ max, title, title2, text, boxname }: sponChoseI) => {
   const [values, setValues] = useState([20000]);
-  const [inputValue, setInputValue] = useState<string>("20000");
+  const [inputValue, setInputValue] = useRecoilState(sponState(boxname));
+  const [isChecked, setIsChecked] = useState(false);
+
+  const checkedBox = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setIsChecked(e.target.checked);
+
+    if (!e.target.checked) {
+      setInputValue((prevState) => ({
+        ...prevState,
+        pay: "0",
+      }));
+      setValues([20000]);
+    } else {
+      setInputValue((prevState) => ({
+        ...prevState,
+        pay: "20000",
+      }));
+    }
+  };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
-    setInputValue(value);
+    setInputValue((prevState) => ({
+      ...prevState,
+      pay: value,
+    }));
 
     const numericValue = Number(value);
     if (
       value &&
       numericValue >= 20000 &&
-      numericValue <= 190000 &&
+      numericValue <= max &&
       numericValue % 10000 === 0
     ) {
       setValues([numericValue]);
@@ -125,55 +188,90 @@ const SponChose = () => {
     }
   };
 
+  useEffect(() => {
+    if (inputValue.id === "sponchose01") {
+      if (Number(inputValue.pay) > 190000) {
+        setValues([190000]);
+        setInputValue((prevState) => ({
+          ...prevState,
+          pay: "190000",
+        }));
+      }
+    }
+    if (inputValue.id === "sponchose02") {
+      if (Number(inputValue.pay) > 100000) {
+        setValues([100000]);
+        setInputValue((prevState) => ({
+          ...prevState,
+          pay: "100000",
+        }));
+      }
+    }
+  }, [inputValue, setInputValue]);
+
+  const tracknumMax = (num: number) => {
+    return new Intl.NumberFormat().format(num);
+  };
+
   return (
     <Container>
       <Box>
-        <input type="checkbox" id="birthSpon" />
-        <Label htmlFor="birthSpon">
-          <span />
+        <CheckBox
+          type="checkbox"
+          id={boxname}
+          onChange={(e) => checkedBox(e)}
+          $isChecked={isChecked}
+        />
+        <Label htmlFor={boxname}>
           <LabelText>
             <p>
-              <span>나의 후원 어린이에게</span>
+              <span>{title}</span>
               <br />
-              생일 선물금을 보냅니다.
+              {title2}
             </p>
-            1년에 한번 후원 어린이 생일 한달전에 양육 후원금과 함께 결제됩니다.
+            {text}
           </LabelText>
         </Label>
         <RangeBox>
           <Range
             step={10000}
             min={20000}
-            max={190000}
+            max={max}
             values={values}
             onChange={(values) => {
+              if (!isChecked) return;
               setValues(values);
-              setInputValue(String(values[0]));
+              setInputValue((prevState) => ({
+                ...prevState,
+                pay: String(values[0]),
+              }));
             }}
             renderTrack={({ props, children }) => (
               <Track {...props}>
                 <TrackSub
                   className="range"
                   style={{
-                    width: `${((values[0] - 20000) / (190000 - 20000)) * 100}%`,
+                    width: `${((values[0] - 20000) / (max - 20000)) * 100}%`,
                   }}
                 />
                 {children}
               </Track>
             )}
-            renderThumb={({ props }) => <Thumb {...props} key={props.key} />}
+            renderThumb={({ props }) => (
+              <Thumb {...props} key={props.key} $isChecked={isChecked} />
+            )}
           />
           <TrackNum>
-            <span style={{ marginRight: "10px" }}>20,000</span>
-            <span style={{ marginLeft: "10px" }}>190,000</span>
+            <span>20,000</span>
+            <span>{tracknumMax(max)}</span>
           </TrackNum>
           <InputBox>
             <InputLeft>
               <Input
                 type="text"
-                value={inputValue}
+                value={inputValue.pay}
                 onChange={handleInputChange}
-                style={{ width: "100px", textAlign: "center" }}
+                disabled={!isChecked}
               />
               <p>원/년</p>
             </InputLeft>
