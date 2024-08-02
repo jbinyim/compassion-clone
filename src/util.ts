@@ -95,6 +95,24 @@ import modalImg05 from "./img/modal/modal05.png";
 import modalImg06 from "./img/modal/modal06.png";
 import modalImg07 from "./img/modal/modal07.png";
 import modalImg08 from "./img/modal/modal08.png";
+import eventImg01 from "./img/event/event01.png";
+import eventImg02 from "./img/event/event02.jpg";
+import eventImg03 from "./img/event/event03.jpg";
+import eventImg04 from "./img/event/event04.jpg";
+import eventImg05 from "./img/event/event05.png";
+import eventImg06 from "./img/event/event06.jpg";
+import eventImg07 from "./img/event/event07.jpg";
+import eventImg08 from "./img/event/event08.png";
+import eventImg09 from "./img/event/event09.jpg";
+import eventImg10 from "./img/event/event10.jpg";
+import eventImg11 from "./img/event/event11.png";
+import eventImg12 from "./img/event/event12.png";
+import eventImg13 from "./img/event/event13.jpg";
+import eventImg14 from "./img/event/event14.jpg";
+import eventImg15 from "./img/event/event15.jpg";
+import eventImg16 from "./img/event/event16.jpg";
+import eventImg17 from "./img/event/event17.png";
+import eventImg18 from "./img/event/event18.jpg";
 
 export const bannerImgArr = [banner01, banner02, banner03, banner04, banner05];
 
@@ -707,5 +725,150 @@ export const modalImg = [
     img: modalImg08,
     title: "유대감 형성",
     text: "어린이들은 후원자와 편지 등을 통해 지속적인 유대관계를 맺게 됩니다. 이를 통해 내 편이 있다는 사실을 깨닫고, 사랑받고 존중받으며 자라납니다.",
+  },
+];
+
+export const eventArr = [
+  {
+    img: eventImg01,
+    category: "이벤트",
+    title: "2024 컴패션 토크 라이브 '뭘 좀 아는 사람들'",
+    date: "2024.08.01 ~ 2024.08.31",
+    process: "진행중",
+  },
+  {
+    img: eventImg02,
+    category: "이벤트",
+    title: "2024 르완다 비전트립",
+    text: "컴패션의 어린이 양육현장을 방문하는 특별한 여행!",
+    date: "2024.05.06 ~ 2024.07.05",
+    process: "진행중",
+  },
+  {
+    img: eventImg03,
+    category: "캠페인",
+    title: "2024 컴패션 비전트립",
+    date: "2023.11.22 ~ 2024.05.31",
+    process: "진행중",
+  },
+  {
+    img: eventImg04,
+    category: "이벤트",
+    title: "2024 컴패션 일반인 홍보대사 VOC 모집",
+    tedt: "컴패션 어린이들의 목소리가 되어주세요.",
+    date: "2024.05.13 ~ 2024.05.26",
+    process: "마감",
+  },
+  {
+    img: eventImg05,
+    category: "캠페인",
+    title: "2024 가정의 달 가족선물금 캠페인",
+    tedt: "어린이 가정을 함께 가꾸는 행복",
+    date: "2024.04.19 ~ 2024.05.31",
+    process: "마감",
+  },
+  {
+    img: eventImg06,
+    category: "이벤트",
+    title: "2024 컴패션 나눔콘선트 '꽃서트'",
+    tedt: "봄처럼 따스한 사랑으로 어린이꽃을 피워주세요",
+    date: "2024.04.18 ~ 2024.05.31",
+    process: "마감",
+  },
+  {
+    img: eventImg07,
+    category: "캠페인",
+    title: "2024 환경 보호 세미나",
+    text: "지구를 지키기 위한 다양한 방안을 논의합니다.",
+    date: "2024.06.15",
+    process: "진행중",
+  },
+  {
+    img: eventImg08,
+    category: "이벤트",
+    title: "크리에이티브 글쓰기 워크숍",
+    text: "창의력을 발휘하여 글을 써보는 시간입니다.",
+    date: "2024.07.01 ~ 2024.07.02",
+    process: "마감",
+  },
+  {
+    img: eventImg09,
+    category: "캠페인",
+    title: "2024 가족 체험 캠프",
+    text: "가족과 함께하는 특별한 체험이 가득합니다.",
+    date: "2024.08.10 ~ 2024.08.12",
+    process: "진행중",
+  },
+  {
+    img: eventImg10,
+    category: "이벤트",
+    title: "2024 재즈 페스티벌",
+    text: "다양한 재즈 아티스트들이 모이는 축제입니다.",
+    date: "2024.08.20 ~ 2024.08.21",
+    process: "마감",
+  },
+  {
+    img: eventImg11,
+    category: "이벤트",
+    title: "2024 요가 페스티벌",
+    text: "심신의 안정을 찾는 요가와 명상 프로그램입니다.",
+    date: "2024.09.05 ~ 2024.09.07",
+    process: "진행중",
+  },
+  {
+    img: eventImg12,
+    category: "캠페인",
+    title: "향수 만들기 워크숍",
+    text: "나만의 향수를 만들어보는 경험입니다.",
+    date: "2024.09.15",
+    process: "진행중",
+  },
+  {
+    img: eventImg13,
+    category: "이벤트",
+    title: "2024 건강 관리 세미나",
+    text: "건강한 삶을 위한 다양한 정보를 제공합니다.",
+    date: "2024.09.25",
+    process: "마감",
+  },
+  {
+    img: eventImg14,
+    category: "캠페인",
+    title: "2024 크리스마스 마켓",
+    text: "따뜻한 크리스마스 분위기를 만끽하세요.",
+    date: "2024.12.01 ~ 2024.12.25",
+    process: "예정",
+  },
+  {
+    img: eventImg15,
+    category: "이벤트",
+    title: "2024 클래식 음악회",
+    text: "세계적인 클래식 아티스트들의 공연입니다.",
+    date: "2024.10.10",
+    process: "진행중",
+  },
+  {
+    img: eventImg16,
+    category: "캠페인",
+    title: "2024 미술 전시회",
+    text: "다양한 아티스트들의 작품을 감상할 수 있는 기회입니다.",
+    date: "2024.11.01 ~ 2024.11.30",
+    process: "마감",
+  },
+  {
+    img: eventImg17,
+    category: "이벤트",
+    title: "사진 촬영 워크숍",
+    text: "전문가에게 배우는 사진 촬영 기법입니다.",
+    date: "2024.11.15",
+    process: "진행중",
+  },
+  {
+    img: eventImg18,
+    category: "캠페인",
+    title: "2024 디지털 마케팅 세미나",
+    text: "최신 마케팅 트렌드를 배울 수 있는 기회입니다.",
+    date: "2024.11.20",
+    process: "마감",
   },
 ];

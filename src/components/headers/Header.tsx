@@ -240,8 +240,18 @@ const Header = () => {
                   >
                     맞춤후원
                   </Menu>
-                  <Menu onMouseOver={() => menuHover(3)}>참여</Menu>
-                  <Menu onMouseOver={() => menuHover(4)}>소식</Menu>
+                  <Menu
+                    onMouseOver={() => menuHover(3)}
+                    onClick={() => pageRoute("event")}
+                  >
+                    참여
+                  </Menu>
+                  <Menu
+                    onMouseOver={() => menuHover(4)}
+                    onClick={() => pageRoute("news")}
+                  >
+                    소식
+                  </Menu>
                 </MenuBox>
                 <IconBox>
                   <span onClick={() => pageRoute("sponsor")}>
