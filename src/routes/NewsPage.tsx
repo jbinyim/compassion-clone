@@ -4,6 +4,7 @@ import Banner from "../components/slides/Banner";
 import newBanner from "../img/news/10001.png";
 import newBanner02 from "../img/news/10002.png";
 import RecomendNews from "../components/newsContents/RecomendNews";
+import Recent from "../components/newsContents/Recent";
 
 const Inner = styled.div`
   max-width: 1200px;
@@ -25,6 +26,7 @@ const NewsPage = () => {
       />
       <Inner>
         <RecomendNews />
+        <Recent/>
       </Inner>
     </div>
   );
