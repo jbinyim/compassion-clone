@@ -22,14 +22,14 @@ export const newsArr = [
     text: "기후 위기 상황 속 자연재해로 인한 피해로부터 안전할 수 있도록 이번 7월에도 전 세계 컴패션 어린이들을 위해 함께 두 손 모아 기도해주세요.",
   },
   {
-    img: "https://www.compassion.or.kr/images/news4.jpg",
+    img: "https://www.compassion.or.kr/upload/2024/08/KakaoTalk_20210727_123802522_03.jpg",
     title: "2024 컴패셔너 연합예배: 우리가 기도할 때 하나님께서 일하십니다",
     category: "예배",
     date: "2024-04-15",
     text: "컴패션을 통해 예수님의 사랑을 경험하고 그 경험에 다른 이를 초대하는 사람들, 컴패셔너들의 아름다운 외침입니다.",
   },
   {
-    img: "https://www.compassion.or.kr/images/news5.jpg",
+    img: "https://www.compassion.or.kr/upload/2024/08/8%EC%9B%94%20%EC%8A%A4%ED%86%A0%EB%A6%AC(2).png",
     title: "컴패션 양육 시리즈: 자녀는 우리에게 주신 가장 큰 축복입니다",
     category: "양육",
     date: "2024-04-10",
