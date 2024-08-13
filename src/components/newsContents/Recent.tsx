@@ -14,35 +14,42 @@ interface newsItemI {
 const Recent = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [display, setDisplay] = useState<newsItemI[]>([]);
+  const [searchText, setSearchText] = useState("");
 
   const pageClick = (index: number) => {
     setCurrentPage(index + 1);
     // window.scrollTo(0, 100);
   };
 
+  const searchArr = newsArr.filter((item) => item.title.includes(searchText));
+
   const getPageItem = () => {
-    const pageItem = newsArr.slice((currentPage - 1) * 5, currentPage * 5);
+    const pageItem = searchArr.slice((currentPage - 1) * 5, currentPage * 5);
     setDisplay(pageItem);
   };
 
-  const totalPage = Math.ceil(newsArr.length / 5);
+  const totalPage = Math.ceil(searchArr.length / 5);
 
   useEffect(() => {
     getPageItem();
-  }, [currentPage]);
+  }, [currentPage, searchText]);
 
   return (
     <styles.Container>
       <styles.TopBox>
         <styles.Title>최신 콘텐츠</styles.Title>
         <styles.SearchBox>
-          <styles.Input type="text" placeholder="컴패션 소식 검색" />
+          <styles.Input
+            type="text"
+            placeholder="컴패션 소식 검색"
+            onChange={(e) => setSearchText(e.target.value)}
+          />
           <styles.SearchBtn>검색</styles.SearchBtn>
         </styles.SearchBox>
       </styles.TopBox>
       <styles.MidBox>
         {display.map((item) => (
-          <styles.Card key={item.date}>
+          <styles.Card key={item.title}>
             <styles.Img src={item.img} alt="newImg" />
             <div>
               <styles.TitleCard>{item.title}</styles.TitleCard>

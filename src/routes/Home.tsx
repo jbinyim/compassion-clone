@@ -13,6 +13,7 @@ import QuickLink from "../components/homeContents/QuickLink";
 const Container = styled.div`
   width: 100%;
   height: auto;
+  overflow-x: hidden;
 `;
 
 const MainContents = styled.div`
