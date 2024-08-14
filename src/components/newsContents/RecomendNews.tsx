@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Container = styled.div`
-  margin-top: 80px;
+  margin: 80px 0 150px;
 `;
 
 const BigTitle = styled.h4`
@@ -56,7 +56,13 @@ const Text = styled.p`
   letter-spacing: -1px;
 `;
 
-const RecomendNews = () => {
+interface newsI {
+  text: string;
+  first: number;
+  sceond: number;
+}
+
+const RecomendNews = ({ text, first, sceond }: newsI) => {
   const settings = {
     dots: false,
     infinite: false,
@@ -86,10 +92,10 @@ const RecomendNews = () => {
   };
   return (
     <Container>
-      <BigTitle>추천 콘텐츠</BigTitle>
+      <BigTitle>{text}</BigTitle>
       <div className="slider-container">
         <Slider {...settings}>
-          {newsArr.slice(0, 3).map((item, idx) => (
+          {newsArr.slice(first, sceond).map((item, idx) => (
             <Card key={idx}>
               <Img src={item.img} alt="recomendImg" />
               <Title>{item.title}</Title>

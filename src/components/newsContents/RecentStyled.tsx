@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  margin-top: 150px;
   border-bottom: 1px solid ${({ theme }) => theme.colors.geyser};
 `;
 
@@ -9,6 +8,9 @@ const TopBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media ${({ theme }) => theme.mediaSize.l} {
+    flex-direction: column;
+  }
 `;
 
 const Title = styled.h4`
@@ -53,6 +55,9 @@ const MidBox = styled.div`
 const Card = styled.div`
   display: flex;
   gap: 30px;
+  @media ${({ theme }) => theme.mediaSize.l} {
+    flex-direction: column;
+  }
 `;
 
 const Img = styled.img`
@@ -60,6 +65,9 @@ const Img = styled.img`
   height: 200px;
   object-fit: cover;
   object-position: top;
+  @media ${({ theme }) => theme.mediaSize.l} {
+    width: 100%;
+  }
 `;
 
 const TitleCard = styled.h4`

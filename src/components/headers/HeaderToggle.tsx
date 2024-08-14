@@ -3,8 +3,9 @@ import styled from "styled-components";
 import logo from "../../img/logo/logo2.png";
 import closeBtn from "../../img/icon/close.png";
 import linkRight from "../../img/icon/headermenuRight.png";
-import { useSetRecoilState } from "recoil";
 import { headerToggleBtn } from "../../atoms";
+import { useSetRecoilState } from "recoil";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   position: fixed;
@@ -76,6 +77,7 @@ const MainMenu = styled.p`
   margin-bottom: 48px;
   padding-bottom: 8px;
   border-bottom: 1px solid ${({ theme }) => theme.colors.nero};
+  cursor: pointer;
   @media ${({ theme }) => theme.mediaSize.xl} {
     font-size: 20px;
   }
@@ -135,10 +137,16 @@ const MenuBottom = styled.p`
 
 const HeaderToggle = () => {
   const setMenuToggle = useSetRecoilState(headerToggleBtn);
+  const navigate = useNavigate();
+
+  const pageRoute = (route: string) => {
+    navigate(`/${route}`);
+  };
+
   return (
     <Container>
       <ToggleHead>
-        <LogoImg src={logo} alt="logo" />
+        <LogoImg src={logo} alt="logo" onClick={() => pageRoute("")} />
         <CloseImg
           onClick={() => setMenuToggle(false)}
           src={closeBtn}
@@ -148,7 +156,7 @@ const HeaderToggle = () => {
       <MenuBox>
         <MenuTopBox>
           <MenuTop>
-            <MainMenu>소개</MainMenu>
+            <MainMenu onClick={() => pageRoute("story")}>소개</MainMenu>
             <SubMenuBox>
               <SubMenu>한눈에 보는 컴패션</SubMenu>
               <SubMenu>컴패션의 양육</SubMenu>
@@ -160,14 +168,16 @@ const HeaderToggle = () => {
             </SubMenuBox>
           </MenuTop>
           <MenuTop>
-            <MainMenu>어린이후원</MainMenu>
+            <MainMenu onClick={() => pageRoute("children")}>
+              어린이후원
+            </MainMenu>
             <SubMenuBox>
               <SubMenu>1:1 어린이양육</SubMenu>
               <SubMenu>1:3 같이양육</SubMenu>
             </SubMenuBox>
           </MenuTop>
           <MenuTop>
-            <MainMenu>맞춤후원</MainMenu>
+            <MainMenu onClick={() => pageRoute("special")}>맞춤후원</MainMenu>
             <SubMenuBox>
               <SubMenu>주제별 양육보완후원</SubMenu>
               <SubMenu>기념일 후원</SubMenu>
@@ -176,7 +186,7 @@ const HeaderToggle = () => {
             </SubMenuBox>
           </MenuTop>
           <MenuTop>
-            <MainMenu>참여</MainMenu>
+            <MainMenu onClick={() => pageRoute("event")}>참여</MainMenu>
             <SubMenuBox>
               <SubMenu>캠페인/이벤트</SubMenu>
               <SubMenu>애드보킷</SubMenu>
@@ -189,7 +199,7 @@ const HeaderToggle = () => {
             </SubMenuBox>
           </MenuTop>
           <MenuTop>
-            <MainMenu>소식</MainMenu>
+            <MainMenu onClick={() => pageRoute("news")}>소식</MainMenu>
             <SubMenuBox>
               <SubMenu>컴패션 소식</SubMenu>
               <SubMenu>공지사항</SubMenu>

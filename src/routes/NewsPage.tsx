@@ -5,7 +5,6 @@ import newBanner from "../img/news/10001.png";
 import newBanner02 from "../img/news/10002.png";
 import RecomendNews from "../components/newsContents/RecomendNews";
 import Recent from "../components/newsContents/Recent";
-import Aram from "../components/newsContents/Aram";
 
 const Inner = styled.div`
   max-width: 1200px;
@@ -26,9 +25,9 @@ const NewsPage = () => {
         text="컴패션의 시선과 활동"
       />
       <Inner>
-        <RecomendNews />
+        <RecomendNews text="추천 콘텐츠" first={0} sceond={3} />
         <Recent />
-        <Aram />
+        <RecomendNews text="추천 콘텐츠" first={21} sceond={24} />
       </Inner>
     </div>
   );
