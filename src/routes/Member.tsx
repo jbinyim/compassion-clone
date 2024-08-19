@@ -4,6 +4,7 @@ import Banner from "../components/slides/Banner";
 import bannerImg from "../img/member/bg_join_banner.png";
 import bannerResImg from "../img/member/bg_join_banner_mob.png";
 import MemberFooter from "../components/footers/MemberFooter";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div``;
 
@@ -72,6 +73,12 @@ const KakoText = styled.p`
 `;
 
 const Member = () => {
+  const navigate = useNavigate();
+
+  const goToPage = (page: string) => {
+    navigate(`/member/${page}`);
+  };
+
   return (
     <Container>
       <Banner
@@ -86,7 +93,7 @@ const Member = () => {
           <br />
           해당하는 회원유형을 선택하여 진행해주시기 바랍니다.
         </Title>
-        <Box>
+        <Box onClick={() => goToPage("checkIdentify")}>
           <Img
             src="https://www.compassion.or.kr/resources/fo/compassion/assets/images/sub/ico_individual.png"
             alt="onlymember"

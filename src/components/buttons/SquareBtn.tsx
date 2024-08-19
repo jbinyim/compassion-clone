@@ -135,6 +135,13 @@ const Btn = styled.button`
       max-width: 100%;
     }
   }
+  &.memberBtn {
+    max-width: 286px;
+    width: 100%;
+    height: 48px;
+    border: 1px solid ${({ theme }) => theme.colors.endeavour};
+    color: ${({ theme }) => theme.colors.endeavour};
+  }
 `;
 
 interface squareBtnI {

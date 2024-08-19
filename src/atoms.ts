@@ -35,3 +35,11 @@ export const sponState = atomFamily({
     };
   },
 });
+
+export const infoState = atom({
+  key: "inputState",
+  default: {
+    name: "",
+    birth: "",
+  },
+});

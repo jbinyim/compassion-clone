@@ -14,6 +14,7 @@ import CheckIdentify from "./components/registor/CheckIdentify";
 import SponsorPage from "./routes/SponsorPage";
 import EventPage from "./routes/EventPage";
 import NewsPage from "./routes/NewsPage";
+import InputInfo from "./components/registor/InputInfo";
 
 const routes = [
   { path: "/", element: <Home /> },
@@ -25,6 +26,7 @@ const routes = [
   { path: "/news", element: <NewsPage /> },
   { path: "/member", element: <Member /> },
   { path: "/member/checkIdentify", element: <CheckIdentify /> },
+  { path: "/member/inputInfo", element: <InputInfo /> },
   { path: "/login", element: <Login /> },
 ];
 

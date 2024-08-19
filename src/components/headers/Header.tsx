@@ -285,7 +285,10 @@ const Header = () => {
     );
   };
 
-  if (window.location.pathname === "/sponsor") {
+  if (
+    window.location.pathname === "/sponsor" ||
+    window.location.pathname === "/member/checkIdentify"
+  ) {
     return render(58);
   } else {
     return render(yScroll);

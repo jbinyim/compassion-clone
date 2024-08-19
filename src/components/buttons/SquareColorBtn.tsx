@@ -138,6 +138,11 @@ const Btn = styled.button`
       background: rgb(0, 67, 129);
     }
   }
+  &.memberBtn {
+    max-width: 286px;
+    width: 100%;
+    height: 48px;
+  }
 `;
 
 interface SColorI {
