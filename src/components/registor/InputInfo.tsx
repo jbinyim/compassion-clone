@@ -11,6 +11,7 @@ const InputInfo = () => {
   return (
     <div>
       <BannerColor text="개인 회원가입" />
+      <div></div>
     </div>
   );
 };
