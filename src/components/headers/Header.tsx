@@ -287,7 +287,8 @@ const Header = () => {
 
   if (
     window.location.pathname === "/sponsor" ||
-    window.location.pathname === "/member/checkIdentify"
+    window.location.pathname === "/member/checkIdentify" ||
+    window.location.pathname === "/member/inputInfo"
   ) {
     return render(58);
   } else {

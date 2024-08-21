@@ -36,10 +36,11 @@ const CheckIdentify = () => {
       alert("이름과 생년월일을 입력해주세요");
       return;
     } else {
-      setInputInfo({
+      setInputInfo((prev) => ({
+        ...prev,
         name: inputName,
         birth: inputBirth,
-      });
+      }));
       navigate("/member/inputInfo");
     }
   };

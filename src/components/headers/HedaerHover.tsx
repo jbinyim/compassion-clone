@@ -7,6 +7,8 @@ import SquareBtn from "../buttons/SquareBtn";
 import SquareColorBtn from "../buttons/SquareColorBtn";
 import { memberHeaderHoverBtn } from "../../util";
 import { Link } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { infoState } from "../../atoms";
 
 const Container = styled.div`
   border-top: 1px solid ${({ theme }) => theme.colors.alto};
@@ -112,6 +114,10 @@ interface hoverI {
 
 const HedaerHover = ({ menuId }: hoverI) => {
   const setMouseHover = useSetRecoilState(headerMHover);
+  const [inputInfo, setInputInfo] = useRecoilState(infoState);
+
+  console.log(inputInfo);
+
   if (menuId === 0) {
     return (
       <Container onMouseLeave={() => setMouseHover(false)}>
@@ -237,10 +243,15 @@ const HedaerHover = ({ menuId }: hoverI) => {
       <MemberContainer>
         <MemberTop>
           <MemberTitle>
-            <span>후원자님</span>, 반갑습니다!
+            <span>{inputInfo && inputInfo.name} 후원자님 </span>, 반갑습니다!
           </MemberTitle>
           <Link to={"/login"}>
-            <SquareBtn text="로그인 / Sign in" btnName="signIn" />
+            <SquareBtn
+              text={
+                inputInfo.name === "" ? "로그인 / Log in" : "로그아웃 / Log out"
+              }
+              btnName="signIn"
+            />
           </Link>
           <Link to={"/member"}>
             <SquareColorBtn text="회원가입 / Sign up" btnName="signUp" />

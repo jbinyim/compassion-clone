@@ -41,5 +41,7 @@ export const infoState = atom({
   default: {
     name: "",
     birth: "",
+    id: "",
+    pw: "",
   },
 });
