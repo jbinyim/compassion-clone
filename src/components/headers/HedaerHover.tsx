@@ -243,15 +243,10 @@ const HedaerHover = ({ menuId }: hoverI) => {
       <MemberContainer>
         <MemberTop>
           <MemberTitle>
-            <span>{inputInfo && inputInfo.name} 후원자님 </span>, 반갑습니다!
+            <span>후원자님 </span>, 반갑습니다!
           </MemberTitle>
           <Link to={"/login"}>
-            <SquareBtn
-              text={
-                inputInfo.name === "" ? "로그인 / Log in" : "로그아웃 / Log out"
-              }
-              btnName="signIn"
-            />
+            <SquareBtn text={"로그인 / Log in"} btnName="signIn" />
           </Link>
           <Link to={"/member"}>
             <SquareColorBtn text="회원가입 / Sign up" btnName="signUp" />

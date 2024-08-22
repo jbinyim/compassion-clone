@@ -52,11 +52,9 @@ const InputInfo = () => {
         id: inputId,
         pw: inputPw,
       }));
-      navigate("/");
+      navigate("/login");
     }
   };
-
-  console.log(inputId, inputPw);
 
   return (
     <design.Container>
