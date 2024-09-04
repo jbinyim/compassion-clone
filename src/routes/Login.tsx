@@ -169,7 +169,7 @@ const Login = () => {
           <Check type="checkbox" id="stayLogin" />
           <label htmlFor="stayLogin">로그인 상태유지</label>
         </CheckBox>
-        <SquareColorBtn text="로그인? / Signin" btnName="signUp login" />
+        <SquareColorBtn text="로그인 / Signin" btnName="signUp login" />
         <TextBtnBox>
           <TextBtn>아이디 찾기</TextBtn>
           <TextBtn>비밀번호 찾기</TextBtn>
